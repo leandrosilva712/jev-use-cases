@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "from": "accounts@vendor-billing.com",
+    "subject": "Invoice #4821 for October",
+    "body": "Hi, attached is invoice 4821 for $1,200, due Nov 15. Payment details are on the invoice. Please confirm receipt.",
+    "expected": {
+      "category": "billing",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 2,
+    "from": "sam@customer.com",
+    "subject": "Charged twice for my subscription",
+    "body": "Hello, I was charged twice this month for my subscription. Can you refund the duplicate today?",
+    "expected": {
+      "category": "billing",
+      "phishing": false,
+      "urgency": 1,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 3,
+    "from": "billing@acc0unt-secure.ru",
+    "subject": "Payment overdue - account suspended",
+    "body": "Your account has been suspended due to an overdue payment. Verify your account immediately: http://pay-secure-login.xyz/verify or we will close it.",
+    "expected": {
+      "category": "billing",
+      "phishing": true,
+      "urgency": 2,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 4,
+    "from": "receipts@shop.example",
+    "subject": "Receipt for your purchase",
+    "body": "Thanks for your payment of $49. This is your receipt. No action is needed.",
+    "expected": {
+      "category": "billing",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 5,
+    "from": "cto@customer.com",
+    "subject": "API returning 500 errors in production",
+    "body": "Our production API has been returning 500 errors since 9am. This is critical and customers are affected. Can you investigate right now?",
+    "expected": {
+      "category": "technical",
+      "phishing": false,
+      "urgency": 2,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 6,
+    "from": "dev@customer.com",
+    "subject": "Bug: dashboard export times out",
+    "body": "Exporting reports takes minutes and ends in a timeout. It is not blocking us. Any idea what causes it?",
+    "expected": {
+      "category": "technical",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 7,
+    "from": "qa@customer.com",
+    "subject": "Login page crash on Safari",
+    "body": "The login page crashes on Safari 17. Steps to reproduce are attached. Could you take a look this week?",
+    "expected": {
+      "category": "technical",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 8,
+    "from": "it-helpdesk@company-support.top",
+    "subject": "Your password will expire today",
+    "body": "Your password will expire today. Click here to keep your access: http://company-login-secure.top/reset",
+    "expected": {
+      "category": "technical",
+      "phishing": true,
+      "urgency": 1,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 9,
+    "from": "cfo@bigco.com",
+    "subject": "Pricing for 200 seats",
+    "body": "We are evaluating your Enterprise plan for 200 seats. Could you send a quote and pricing details?",
+    "expected": {
+      "category": "sales",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 10,
+    "from": "lead@startup.io",
+    "subject": "Demo request",
+    "body": "We would love a demo of the product next week. Let me know what times work.",
+    "expected": {
+      "category": "sales",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 11,
+    "from": "bd@partner.com",
+    "subject": "Partnership proposal",
+    "body": "Our company would like to discuss a partnership. Please get back to me when convenient.",
+    "expected": {
+      "category": "sales",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 12,
+    "from": "jo@ourcompany.com",
+    "subject": "Vacation request Dec 20-31",
+    "body": "Hi, I would like to take vacation from Dec 20 to Dec 31. Can you approve it?",
+    "expected": {
+      "category": "hr",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": true
+    }
+  },
+  {
+    "id": 13,
+    "from": "hr@ourcompany.com",
+    "subject": "Onboarding schedule for new hires",
+    "body": "The onboarding schedule for Monday's new hires is attached. No reply needed.",
+    "expected": {
+      "category": "hr",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 14,
+    "from": "hr-payroll@company-benefits.xyz",
+    "subject": "Payroll update required",
+    "body": "Please update your direct deposit today through this link: http://payroll-login-secure.xyz. Confirm your bank details to avoid delayed pay.",
+    "expected": {
+      "category": "hr",
+      "phishing": true,
+      "urgency": 1,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 15,
+    "from": "digest@remotework.example",
+    "subject": "Weekly digest: 10 tips for remote teams",
+    "body": "This week in remote work: async meetings, better standups and focus time. Unsubscribe anytime.",
+    "expected": {
+      "category": "newsletter",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 16,
+    "from": "news@productco.example",
+    "subject": "Newsletter: what is new in October",
+    "body": "Our monthly newsletter is here with design updates and community stories. Unsubscribe at the bottom.",
+    "expected": {
+      "category": "newsletter",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 17,
+    "from": "editor@industry.example",
+    "subject": "Industry roundup",
+    "body": "Your roundup of the top stories in logistics this month. Unsubscribe here.",
+    "expected": {
+      "category": "newsletter",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 18,
+    "from": "winner@lucky-draw.example",
+    "subject": "You are the winner!",
+    "body": "Congratulations, you are the winner of our lottery! Claim your prize by paying a small processing fee.",
+    "expected": {
+      "category": "spam",
+      "phishing": true,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 19,
+    "from": "growth@seo-boost.example",
+    "subject": "Boost your ranking with SEO services",
+    "body": "We offer SEO services to double your traffic. Book a free audit.",
+    "expected": {
+      "category": "spam",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  },
+  {
+    "id": 20,
+    "from": "deals@fastcoin.example",
+    "subject": "Miracle crypto returns",
+    "body": "Crypto miracle returns with limited spots. Act now.",
+    "expected": {
+      "category": "spam",
+      "phishing": false,
+      "urgency": 0,
+      "needs_reply": false
+    }
+  }
+]

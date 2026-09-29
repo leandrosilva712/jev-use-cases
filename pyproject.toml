@@ -1,0 +1,13 @@
+[project]
+name = "jev-use-cases"
+version = "0.1.0"
+description = "Two runnable use cases for TypeSafe's Jev: agent guardrails and an email filter"
+requires-python = ">=3.11"
+dependencies = [
+    "typesafe-sdk>=0.7",
+    "anthropic>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[tool.uv]
+package = false
