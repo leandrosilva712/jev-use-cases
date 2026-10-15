@@ -10,6 +10,7 @@ dependencies = [
     "pandas>=3.0.6",
     "jsonschema>=4.26.0",
     "tabulate>=0.10.0",
+    "google-genai>=2.31.0",
 ]
 
 [tool.uv]

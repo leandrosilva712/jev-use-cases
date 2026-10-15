@@ -25,9 +25,12 @@ JEV_CONFIG_PATH = JEV_DIR / "config.json"
 
 # LLM baseline (llm/)
 LLM_DIR = ROOT / "llm"
+LLM_TOOLS_PATH = LLM_DIR / "tools.json"
 
-# Results: results/<system>/<split>.jsonl, compared by evaluation/evaluate.py
+# Results: results/<system>/<split>.jsonl, compared by evaluation/evaluate.py;
+# the blog's four scenarios go to results/report/ (evaluation/report.py)
 RESULTS_DIR = ROOT / "results"
+REPORT_DIR = RESULTS_DIR / "report"
 
 
 def system_results(system: str) -> Path:

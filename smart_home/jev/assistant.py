@@ -7,14 +7,17 @@ then assembles the call from the answers that apply:
   1. __tool__ picks the function (or no_call).
   2. Required arguments take the chosen option of fn.arg.
   3. Optional arguments take fn.arg only if the "stated" check fn.arg? says the
-     command mentions them (P(yes) >= stated_cutoff); otherwise the API default.
+     command mentions them (P(yes) >= that check's cut-off); otherwise the API
+     default. Each check uses stated_cutoffs[check] if set, else stated_cutoff.
   4. The call's confidence is its least certain judgement: the Choice
      confidence of each choice read, |2p - 1| for each stated check read.
   5. Confidence gate: below `threshold`, ask "did you mean ...?" (clarify)
      instead of acting.
 
-stated_cutoff and threshold are tuned on the dev rows only (jev/tune.py) and
-stored in jev/config.json.
+stated_cutoff defaults to 0.5; jev/tune.py tunes chosen checks on the dev rows
+only (by default the room checks) and stores them as stated_cutoffs in
+jev/config.json. The threshold defaults to 0 (gate off);
+evaluation/report.py sweeps it from 0.5 to 1 to show the trade-off.
 
 Run (from smart_home/):
   python -m jev.assistant --split dev   (calls Jev for rows not cached yet,
@@ -33,8 +36,7 @@ import pandas as pd
 from typesafe_sdk import RetryPolicy, TypeSafeClient
 
 from common.api import NO_CALL, TOOLS
-from common.paths import COMMANDS_CSV, JEV_CONFIG_PATH as CONFIG_PATH, QUESTIONS_PATH, ROOT, load_env, \
-    system_results
+from common.paths import COMMANDS_CSV, JEV_CONFIG_PATH, QUESTIONS_PATH, ROOT, load_env, system_results
 from common.schema import DEFAULTS, closed_sets
 from jev.build_questions import ROUTE
 
@@ -43,7 +45,7 @@ RESULTS_DIR = system_results(SYSTEM)
 RAW_PATH = RESULTS_DIR / "raw.json"
 
 MODEL = "jev-1.13.0"  # pinned so answers don't change mid-test
-DEFAULT_CONFIG = {"model": MODEL, "stated_cutoff": 0.5, "threshold": 0.0}
+DEFAULT_CONFIG = {"model": MODEL, "stated_cutoff": 0.5, "stated_cutoffs": {}, "threshold": 0.0}
 
 
 @dataclass
@@ -60,13 +62,18 @@ class Call:
 
 
 def load_config() -> dict:
-    if CONFIG_PATH.exists():
-        return DEFAULT_CONFIG | json.loads(CONFIG_PATH.read_text())
+    if JEV_CONFIG_PATH.exists():
+        return DEFAULT_CONFIG | json.loads(JEV_CONFIG_PATH.read_text())
     return dict(DEFAULT_CONFIG)
 
 
-def assemble(answers: dict, stated_cutoff: float, threshold: float) -> Call:
-    """Build the function call from Jev's raw answers ({question id: answer dict})."""
+def assemble(answers: dict, stated_cutoff: float, threshold: float,
+             stated_cutoffs: dict[str, float] | None = None) -> Call:
+    """Build the function call from Jev's raw answers ({question id: answer dict}).
+
+    stated_cutoffs overrides the cut-off for specific checks, e.g. {"lights.room?": 0.25}.
+    """
+    stated_cutoffs = stated_cutoffs or {}
     route = answers[ROUTE]
     judgements = {ROUTE: route["confidence"]}
     function = route["choice"]
@@ -77,7 +84,7 @@ def assemble(answers: dict, stated_cutoff: float, threshold: float) -> Call:
             if optional:
                 p = answers[f"{qid}?"]["noul"]
                 judgements[f"{qid}?"] = abs(2 * p - 1)
-                if p < stated_cutoff:
+                if p < stated_cutoffs.get(f"{qid}?", stated_cutoff):
                     args[arg] = DEFAULTS[function][arg]
                     continue
             args[arg] = answers[qid]["choice"]
@@ -140,7 +147,7 @@ def predictions(commands: pd.DataFrame, raw: dict, config: dict) -> list[dict]:
     records = []
     for row in commands.itertuples():
         r = raw[str(row.id)]
-        call = assemble(r["answers"], config["stated_cutoff"], config["threshold"])
+        call = assemble(r["answers"], config["stated_cutoff"], config["threshold"], config.get("stated_cutoffs"))
         records.append({
             "id": row.id, "split": row.split, "system": SYSTEM, "model": r["model"],
             "function": call.function, "args": call.args, "call": str(call),
@@ -163,7 +170,8 @@ def main() -> None:
     config = load_config()
     out = RESULTS_DIR / f"{split}.jsonl"
     out.write_text("".join(json.dumps(p) + "\n" for p in predictions(commands, raw, config)))
-    print(f"Wrote {out.relative_to(ROOT)} (stated_cutoff={config['stated_cutoff']}, threshold={config['threshold']})")
+    print(f"Wrote {out.relative_to(ROOT)} (cut-offs {config['stated_cutoffs']}, others {config['stated_cutoff']}; "
+          f"threshold {config['threshold']})")
 
 
 if __name__ == "__main__":

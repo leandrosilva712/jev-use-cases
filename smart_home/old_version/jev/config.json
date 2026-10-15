@@ -1,0 +1,19 @@
+{
+  "model": "jev-1.13.0",
+  "stated_cutoff": 0.5,
+  "stated_cutoffs": {
+    "lights.room?": 0.35,
+    "vacuum.room?": 0.35
+  },
+  "tuned": {
+    "room": {
+      "checks": [
+        "lights.room?",
+        "vacuum.room?"
+      ],
+      "cutoff": 0.35,
+      "dev_right_calls": 0.98
+    }
+  },
+  "tuned_on": "dev (50 rows)"
+}

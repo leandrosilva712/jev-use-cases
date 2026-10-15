@@ -1,0 +1,6 @@
+id,utt,expected_call,call,text,confidence,weakest,invalid,error
+2283,i need to change my house lights color to blue,"lights(action=""color"", room=""all"", color=""blue"")","lights(action=""color"", color=""blue"")",,0.36,lights.room?,False,
+4248,house lights blue,"lights(action=""color"", room=""all"", color=""blue"")","lights(action=""color"", color=""blue"")",,0.06,lights.room?,False,
+3,quiet,"speaker(action=""mute"")","speaker(action=""volume_down"")",,0.92,speaker.action,False,
+1941,clean my house,"vacuum(room=""all"")",vacuum(),,0.32,vacuum.room?,False,
+25,olly clean the flat,"vacuum(room=""all"")",vacuum(),,0.32,vacuum.room?,False,

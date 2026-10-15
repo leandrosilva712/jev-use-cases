@@ -1,2 +1,3 @@
-id,utt,expected_call,call,clarify,confidence,invalid,error
-26,clean the flat,"vacuum(room=""all"")",vacuum(),False,0.86,False,
+id,utt,expected_call,call,text,confidence,weakest,invalid,error
+2965,turn office lights off,"lights(action=""off"", room=""office"")","lights(action=""off"")",,0.68,lights.room?,False,
+26,clean the flat,"vacuum(room=""all"")",vacuum(),,0.66,vacuum.room?,False,

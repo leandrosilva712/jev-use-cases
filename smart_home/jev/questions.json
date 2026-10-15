@@ -44,10 +44,10 @@
   },
   "lights.room?": {
     "type": "noul",
-    "instructions": "Does the user say which room's lights, such as the kitchen, the bedroom, the porch or the whole house?",
+    "instructions": "Does the user say where the lights are, either a room such as the kitchen, the bedroom or the porch, or everywhere, such as all the lights or the whole home?",
     "criteria": {
-      "true": "names a room or the whole house",
-      "false": "does not say which room"
+      "true": "names a room, or asks for all the lights or the whole home",
+      "false": "says nothing about a room or the whole home, only the lights"
     }
   },
   "lights.color": {
@@ -94,10 +94,10 @@
   },
   "vacuum.room?": {
     "type": "noul",
-    "instructions": "Does the user say where to vacuum, such as the kitchen, the bedroom, the hallway or the whole house?",
+    "instructions": "Does the user say where to vacuum, either a room such as the kitchen, the bedroom or the hallway, or everywhere, such as the whole home?",
     "criteria": {
-      "true": "names a room or the whole house",
-      "false": "does not say where to vacuum"
+      "true": "names a room, or asks for the whole home or everywhere",
+      "false": "says nothing about a room or the whole home, only to vacuum"
     }
   },
   "coffee.drink": {

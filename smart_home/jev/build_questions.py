@@ -14,7 +14,7 @@ Question ids:
   fn.arg           choice  the value of an argument
   fn.arg?          noul    does the command mention this optional argument?
 
-Run (from smart_home/):  python -m jev.build_questions   (writes jev/questions.json for review)
+Run (from smart_home/):  python -m jev.build_questions   (jev/spec.json -> jev/questions.json)
 """
 
 from __future__ import annotations

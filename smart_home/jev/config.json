@@ -1,13 +1,19 @@
 {
   "model": "jev-1.13.0",
-  "stated_cutoff": 0.35,
-  "threshold": 0.0,
-  "tuned_on": "dev (50 rows)",
-  "wrong_cost": 1.0,
-  "dev_right_calls_no_gate": 0.98,
-  "dev_after_gate": {
-    "acted right": 49,
-    "acted wrong": 1,
-    "clarify": 0
-  }
+  "stated_cutoff": 0.5,
+  "stated_cutoffs": {
+    "lights.room?": 0.25,
+    "vacuum.room?": 0.25
+  },
+  "tuned": {
+    "room": {
+      "checks": [
+        "lights.room?",
+        "vacuum.room?"
+      ],
+      "cutoff": 0.25,
+      "dev_right_calls": 0.96
+    }
+  },
+  "tuned_on": "dev (50 rows)"
 }

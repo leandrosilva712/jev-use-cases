@@ -1,0 +1,154 @@
+{
+  "system_instruction": "You are the voice assistant of a smart home. What is the person asking the smart home voice assistant to do? Answer by calling the one function that does it.\nIf it is something other than a home device function, such as a question or small talk, do not call any function and reply in one short sentence.\nOnly fill an optional argument when the person says it; otherwise leave it out.",
+  "tools": [
+    {
+      "name": "lights",
+      "description": "switch the lights on or off, change their brightness or colour",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "on",
+              "off",
+              "brighter",
+              "dimmer",
+              "color"
+            ],
+            "description": "Does the user want the lights switched on, switched off, made brighter, made dimmer or changed colour?\non: the lights switched on\noff: the lights switched off\nbrighter: the lights made brighter, at a higher brightness\ndimmer: the lights made dimmer, at a lower brightness\ncolor: the lights changed to a particular colour"
+          },
+          "room": {
+            "type": "string",
+            "enum": [
+              "kitchen",
+              "living room",
+              "bedroom",
+              "bathroom",
+              "dining room",
+              "hallway",
+              "office",
+              "den",
+              "garage",
+              "porch",
+              "patio",
+              "balcony",
+              "garden",
+              "all"
+            ],
+            "description": "Which room's lights does the user mean?\nliving room: the living room or lounge\nhallway: the hallway or corridor\noffice: the home office or study\nporch: the porch at the front door\npatio: the paved patio outside\ngarden: the garden or back yard\nall: the lights in every room of the house"
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "white"
+            ],
+            "description": "Which colour does the user want the lights to be?"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "vacuum",
+      "description": "start the robot vacuum or hoover cleaning the floors",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": [
+              "kitchen",
+              "living room",
+              "bedroom",
+              "bathroom",
+              "dining room",
+              "hallway",
+              "office",
+              "den",
+              "garage",
+              "porch",
+              "patio",
+              "balcony",
+              "garden",
+              "all"
+            ],
+            "description": "Which room does the user want vacuumed?\nliving room: the living room or lounge\nhallway: the hallway or corridor\noffice: the home office or study\nporch: the porch at the front door\npatio: the paved patio outside\ngarden: the garden or back yard\nall: every room in the house"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "coffee",
+      "description": "make a cup of coffee with the coffee machine",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "drink": {
+            "type": "string",
+            "enum": [
+              "regular",
+              "espresso",
+              "cappuccino",
+              "latte",
+              "americano"
+            ],
+            "description": "Which kind of coffee does the user want?\nregular: a plain ordinary cup of coffee\nespresso: a small strong shot of coffee\ncappuccino: a coffee with a thick foamy milk top\nlatte: a mild milky coffee made with lots of steamed milk\namericano: a long black coffee, a shot topped up with hot water"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "plug",
+      "description": "switch the smart plug or wemo socket on or off",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "on",
+              "off"
+            ],
+            "description": "Does the user want the smart plug switched on or off?\non: the socket switched on, supplying power\noff: the socket switched off, cutting the power"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "speaker",
+      "description": "change the speaker volume or mute it",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "volume_up",
+              "volume_down",
+              "mute"
+            ],
+            "description": "Does the user want the speaker louder, quieter or silenced?\nvolume_up: the sound made louder\nvolume_down: the sound made quieter\nmute: the sound silenced completely"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    }
+  ]
+}

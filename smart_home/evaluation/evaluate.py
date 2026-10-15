@@ -4,16 +4,17 @@ Every system (Jev, the LLM baseline...) writes results/<system>/<split>.jsonl
 with one record per command:
   id, system, model, function, args, clarify, latency_s, input_tokens,
   output_tokens, invalid, error
-`function`/`args` are the call the system would make; `clarify` is true when it
-asks "did you mean ...?" instead (only Jev's confidence gate does this).
+`function`/`args` are the call the system would make; `confidence` is Jev's
+call confidence (none for the LLM).
 
-Metrics, all on the same rows:
-  - before the gate: right function, right call (function + every argument),
-    right arguments given the right function, no_call on unrelated commands
-  - after the gate: acted correctly / acted wrongly / asked to clarify, and
-    whether the clarify cases are mostly ones that would have been wrong
+Metrics, all on the same rows (metrics()):
+  - right function, right call (function + every argument), right arguments
+    given the right device, no_call on unrelated commands
   - invalid calls, latency (typical and slowest), tokens and cost per 1,000
     commands from the vendors' list prices
+The confidence gate ("did you mean ...?" below a threshold) is evaluated
+separately by gate_sweep(): acted correctly / acted wrongly / asked, per
+threshold. evaluation/report.py builds the blog's four scenarios from these.
 
 Run (from smart_home/):
   python -m evaluation.evaluate --split test            (every results/*/test.jsonl)
@@ -81,6 +82,7 @@ def score(commands: pd.DataFrame, records: list[dict]) -> pd.DataFrame:
             "args_ok": function_ok and not invalid and args == expected_args,
             "arg_hits": {a: args.get(a) == v for a, v in expected_args.items()} if function_ok else {},
             "clarify": bool(r.get("clarify")), "confidence": r.get("confidence"),
+            "weakest": r.get("weakest"), "text": r.get("text"),
             "invalid": invalid, "error": r.get("error"),
             "latency_s": r["latency_s"], "input_tokens": r["input_tokens"] or 0,
             "output_tokens": r["output_tokens"] or 0, "model": r["model"],
@@ -94,9 +96,6 @@ def metrics(s: pd.DataFrame) -> dict:
     device = s[s["expected_function"] != NO_CALL]
     unrelated = s[s["expected_function"] == NO_CALL]
     right_fn_device = device[device["function_ok"]]
-    acted = s[~s["clarify"]]
-    clarified = s[s["clarify"]]
-    wrong = s[~s["call_ok"]]
     rate_in, rate_out = price(s["model"].iloc[0])
     cost = (s["input_tokens"] * rate_in + s["output_tokens"] * rate_out).mean() * 1000
     pct = lambda part, whole: 100 * len(part) / len(whole) if len(whole) else float("nan")
@@ -109,14 +108,6 @@ def metrics(s: pd.DataFrame) -> dict:
         "Device command -> no_call %": pct(device[device["function"] == NO_CALL], device),
         "Invalid calls": int(s["invalid"].sum()),
         "Errors": int(s["error"].notna().sum()),
-        "After gate: acted correctly %": pct(acted[acted["call_ok"]], s),
-        "After gate: acted wrongly %": pct(acted[~acted["call_ok"]], s),
-        "After gate: asked to clarify %": pct(clarified, s),
-        "Clarify cases that were wrong %": pct(clarified[~clarified["call_ok"]], clarified),
-        "Wrong calls caught by clarify %": pct(wrong[wrong["clarify"]], wrong),
-        # Threshold-free: does confidence separate right from wrong calls?
-        "Median confidence, right calls": s.loc[s["call_ok"], "confidence"].astype(float).median(),
-        "Median confidence, wrong calls": wrong["confidence"].astype(float).median(),
         "Latency p50 (ms)": 1000 * s["latency_s"].median(),
         "Latency p95 (ms)": 1000 * s["latency_s"].quantile(0.95),
         "Latency max (ms)": 1000 * s["latency_s"].max(),
@@ -126,6 +117,31 @@ def metrics(s: pd.DataFrame) -> dict:
     }
 
 
+def gate_sweep(s: pd.DataFrame, thresholds) -> pd.DataFrame:
+    """What the confidence gate does at each threshold: below it, ask instead of acting.
+
+    `s` is scored with the gate off (every call made). The first row is the gate off.
+    """
+    conf = s["confidence"].astype(float)
+    ok = s["call_ok"]
+    n_wrong = int((~ok).sum())
+    rows = [{"threshold": "off", "acted correctly": int(ok.sum()), "acted wrongly": n_wrong,
+             "asked (did you mean...?)": 0, "asked, call was right": 0, "asked, call was wrong": 0,
+             "wrong calls caught": f"0 of {n_wrong}"}]
+    for t in thresholds:
+        ask = conf < t
+        rows.append({
+            "threshold": f"{t:.2f}",
+            "acted correctly": int((~ask & ok).sum()),
+            "acted wrongly": int((~ask & ~ok).sum()),
+            "asked (did you mean...?)": int(ask.sum()),
+            "asked, call was right": int((ask & ok).sum()),
+            "asked, call was wrong": int((ask & ~ok).sum()),
+            "wrong calls caught": f"{int((ask & ~ok).sum())} of {n_wrong}",
+        })
+    return pd.DataFrame(rows)
+
+
 def per_function(s: pd.DataFrame) -> pd.Series:
     return (100 * s.groupby("expected_function")["call_ok"].mean()).rename("right call %")
 
@@ -133,6 +149,15 @@ def per_function(s: pd.DataFrame) -> pd.Series:
 def per_argument(s: pd.DataFrame) -> pd.Series:
     hits = [(f"{fn}.{a}", ok) for fn, h in zip(s["expected_function"], s["arg_hits"]) for a, ok in h.items()]
     return (100 * pd.DataFrame(hits, columns=["arg", "ok"]).groupby("arg")["ok"].mean()).rename("right %")
+
+
+MISTAKE_COLUMNS = ["id", "utt", "expected_call", "call", "text", "confidence", "weakest", "invalid", "error"]
+
+
+def write_mistakes(s: pd.DataFrame, out: Path) -> pd.DataFrame:
+    mistakes = s.loc[~s["call_ok"], MISTAKE_COLUMNS]
+    mistakes.to_csv(out, index=False)
+    return mistakes
 
 
 def load(path: Path) -> list[dict]:
@@ -165,10 +190,7 @@ def main() -> None:
         table[name] = {k: fmt(v) for k, v in metrics(s).items()}
         extra.append(f"### {name}\n\n" + pd.concat([per_function(s)], axis=1).round(1).to_markdown()
                      + "\n\n" + per_argument(s).round(1).to_frame().to_markdown())
-        mistakes = s[~s["call_ok"] | s["clarify"]]
-        out = path.with_name(path.stem + "_mistakes.csv")
-        mistakes[["id", "utt", "expected_call", "call", "clarify", "confidence", "invalid", "error"]] \
-            .to_csv(out, index=False)
+        write_mistakes(s, path.with_name(path.stem + "_mistakes.csv"))
 
     summary = pd.DataFrame(table)
     shown = [str(p.relative_to(RESULTS_DIR)) for p in files]
@@ -178,7 +200,7 @@ def main() -> None:
     tag = a.split if not a.files else "_".join(f"{p.parent.name}-{p.stem}" for p in files)
     out = RESULTS_DIR / f"summary_{tag}.md"
     out.write_text(report)
-    print(f"Saved {out.relative_to(ROOT)}; mistakes and clarify cases in results/<system>/<split>_mistakes.csv")
+    print(f"Saved {out.relative_to(ROOT)}; mistakes in results/<system>/<split>_mistakes.csv")
 
 
 if __name__ == "__main__":

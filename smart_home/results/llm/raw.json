@@ -1,0 +1,4602 @@
+{
+ "1570": {
+  "utt": "make me a capuccino",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "cappuccino"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.8487,
+  "at": "2026-10-15T15:18:38+00:00"
+ },
+ "13124": {
+  "utt": "how big is the cosmos",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "The observable cosmos is about 93 billion light-years across, but the entire universe may be infinite.",
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 1.0009,
+  "at": "2026-10-15T15:18:39+00:00"
+ },
+ "1031": {
+  "utt": "dim the living room lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.6085,
+  "at": "2026-10-15T15:18:39+00:00"
+ },
+ "2026": {
+  "utt": "coffee make now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 1.7721,
+  "at": "2026-10-15T15:19:22+00:00"
+ },
+ "5149": {
+  "utt": "set the coffee maker to on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "regular"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8673,
+  "at": "2026-10-15T15:19:23+00:00"
+ },
+ "5848": {
+  "utt": "please make me a cappuccino",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "cappuccino"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7164,
+  "at": "2026-10-15T15:19:23+00:00"
+ },
+ "5916": {
+  "utt": "start cappuccino for me now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "cappuccino"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.9594,
+  "at": "2026-10-15T15:19:24+00:00"
+ },
+ "1071": {
+  "utt": "brighten the lights in the hallway",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "hallway",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.7808,
+  "at": "2026-10-15T15:19:25+00:00"
+ },
+ "2075": {
+  "utt": "i want more light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.5896,
+  "at": "2026-10-15T15:19:26+00:00"
+ },
+ "2591": {
+  "utt": "turn up the brightness",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.7372,
+  "at": "2026-10-15T15:19:27+00:00"
+ },
+ "2810": {
+  "utt": "brighten lights in living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.618,
+  "at": "2026-10-15T15:19:27+00:00"
+ },
+ "1427": {
+  "utt": "change the lights to blue olly",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.4281,
+  "at": "2026-10-15T15:19:29+00:00"
+ },
+ "1428": {
+  "utt": "i'd like some red lighting",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "red"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.9197,
+  "at": "2026-10-15T15:19:30+00:00"
+ },
+ "2129": {
+  "utt": "change house light from green to red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "red",
+     "action": "color",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.816,
+  "at": "2026-10-15T15:19:30+00:00"
+ },
+ "2841": {
+  "utt": "set the living room lights to red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "red",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 27,
+  "thinking_tokens": 0,
+  "latency_s": 0.9204,
+  "at": "2026-10-15T15:19:31+00:00"
+ },
+ "2863": {
+  "utt": "change light color to blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "blue",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.2417,
+  "at": "2026-10-15T15:19:32+00:00"
+ },
+ "3734": {
+  "utt": "turn the lights to red color",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "red"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7019,
+  "at": "2026-10-15T15:19:33+00:00"
+ },
+ "2015": {
+  "utt": "dim the lights in the bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bathroom",
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.8165,
+  "at": "2026-10-15T15:19:34+00:00"
+ },
+ "5044": {
+  "utt": "alexa please turn down the lights in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.7206,
+  "at": "2026-10-15T15:19:35+00:00"
+ },
+ "5045": {
+  "utt": "please turn down the lights in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.609,
+  "at": "2026-10-15T15:19:35+00:00"
+ },
+ "5047": {
+  "utt": "alexa please turn down the lights in the house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 1.0239,
+  "at": "2026-10-15T15:19:36+00:00"
+ },
+ "15": {
+  "utt": "turn off the light in the bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bathroom",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8676,
+  "at": "2026-10-15T15:19:37+00:00"
+ },
+ "2187": {
+  "utt": "can you please turn off the light of my bed room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bedroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6614,
+  "at": "2026-10-15T15:19:38+00:00"
+ },
+ "2298": {
+  "utt": "put the lights off now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6212,
+  "at": "2026-10-15T15:19:39+00:00"
+ },
+ "2965": {
+  "utt": "turn office lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "office"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6773,
+  "at": "2026-10-15T15:19:39+00:00"
+ },
+ "4077": {
+  "utt": "turn the kitchen lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "kitchen",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.0604,
+  "at": "2026-10-15T15:19:40+00:00"
+ },
+ "428": {
+  "utt": "turn off the bathroom lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bathroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.5765,
+  "at": "2026-10-15T15:19:41+00:00"
+ },
+ "1500": {
+  "utt": "turn on hall lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on",
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.8086,
+  "at": "2026-10-15T15:19:42+00:00"
+ },
+ "286": {
+  "utt": "light up the lights in the kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "kitchen",
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6603,
+  "at": "2026-10-15T15:19:42+00:00"
+ },
+ "13310": {
+  "utt": "what's two plus two",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Two plus two is four.",
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 6,
+  "thinking_tokens": 0,
+  "latency_s": 0.92,
+  "at": "2026-10-15T15:19:43+00:00"
+ },
+ "13536": {
+  "utt": "wanna netflix and chill",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6741,
+  "at": "2026-10-15T15:19:44+00:00"
+ },
+ "13744": {
+  "utt": "please pull up the wikipedia article on glass blowing",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't browse Wikipedia, but I can help you control your smart home devices!",
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 18,
+  "thinking_tokens": 0,
+  "latency_s": 0.7595,
+  "at": "2026-10-15T15:19:45+00:00"
+ },
+ "1474": {
+  "utt": "what are today's sports news",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't check sports news, but I can help you control your smart home devices.",
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 19,
+  "thinking_tokens": 0,
+  "latency_s": 1.0238,
+  "at": "2026-10-15T15:19:46+00:00"
+ },
+ "2594": {
+  "utt": "tell me about the latest environmental news",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't browse the news, but I'm happy to help you control your smart home devices!",
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.7132,
+  "at": "2026-10-15T15:19:46+00:00"
+ },
+ "2690": {
+  "utt": "turn off the socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.4353,
+  "at": "2026-10-15T15:19:48+00:00"
+ },
+ "3775": {
+  "utt": "i want the smart socket off now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7146,
+  "at": "2026-10-15T15:19:49+00:00"
+ },
+ "5396": {
+  "utt": "please turn socket off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6726,
+  "at": "2026-10-15T15:19:49+00:00"
+ },
+ "1551": {
+  "utt": "turn on wemo",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7826,
+  "at": "2026-10-15T15:19:50+00:00"
+ },
+ "3804": {
+  "utt": "turn on the wemo plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7944,
+  "at": "2026-10-15T15:19:51+00:00"
+ },
+ "5653": {
+  "utt": "toggle wemo plug socket on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.714,
+  "at": "2026-10-15T15:19:52+00:00"
+ },
+ "2206": {
+  "utt": "from now on mute",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6152,
+  "at": "2026-10-15T15:19:52+00:00"
+ },
+ "2323": {
+  "utt": "mute the speaker please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.0175,
+  "at": "2026-10-15T15:19:53+00:00"
+ },
+ "1639": {
+  "utt": "please turn the volume down",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.8356,
+  "at": "2026-10-15T15:19:54+00:00"
+ },
+ "3809": {
+  "utt": "slow down the speaker volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 1.1341,
+  "at": "2026-10-15T15:19:55+00:00"
+ },
+ "2360": {
+  "utt": "turn the volume up",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6966,
+  "at": "2026-10-15T15:19:56+00:00"
+ },
+ "5105": {
+  "utt": "olly turn the volume up",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 1.428,
+  "at": "2026-10-15T15:19:57+00:00"
+ },
+ "2053": {
+  "utt": "make my iroomba clean the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.681,
+  "at": "2026-10-15T15:19:58+00:00"
+ },
+ "26": {
+  "utt": "clean the flat",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.1521,
+  "at": "2026-10-15T15:19:59+00:00"
+ },
+ "3415": {
+  "utt": "can you activate the vacuum to clean the house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.9679,
+  "at": "2026-10-15T15:20:00+00:00"
+ },
+ "4945": {
+  "utt": "vacuum living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 1.1795,
+  "at": "2026-10-15T15:20:01+00:00"
+ },
+ "5404": {
+  "utt": "get the roomba to clean the kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "kitchen"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.9173,
+  "at": "2026-10-15T15:20:02+00:00"
+ },
+ "1166": {
+  "utt": "olly i'd like an espresso",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "espresso"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6974,
+  "at": "2026-10-15T15:20:09+00:00"
+ },
+ "1167": {
+  "utt": "i'd like an espresso",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "espresso"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7138,
+  "at": "2026-10-15T15:20:10+00:00"
+ },
+ "1168": {
+  "utt": "can i please have a cafe americano",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "americano"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8002,
+  "at": "2026-10-15T15:20:10+00:00"
+ },
+ "1413": {
+  "utt": "can you make me some coffee olly",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.8343,
+  "at": "2026-10-15T15:20:11+00:00"
+ },
+ "1569": {
+  "utt": "can i have an espresso please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "espresso"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.4685,
+  "at": "2026-10-15T15:20:12+00:00"
+ },
+ "1572": {
+  "utt": "get me some latte please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "latte"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.7097,
+  "at": "2026-10-15T15:20:12+00:00"
+ },
+ "2812": {
+  "utt": "can you make me a cup of coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.6553,
+  "at": "2026-10-15T15:20:13+00:00"
+ },
+ "2868": {
+  "utt": "please get the coffee machine to make me some coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7132,
+  "at": "2026-10-15T15:20:14+00:00"
+ },
+ "3321": {
+  "utt": "please make me a cup of coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7015,
+  "at": "2026-10-15T15:20:15+00:00"
+ },
+ "3323": {
+  "utt": "please turn on my coffee pot",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "regular"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7263,
+  "at": "2026-10-15T15:20:15+00:00"
+ },
+ "4244": {
+  "utt": "olly turn on the coffee machine to make me some coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "regular"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6516,
+  "at": "2026-10-15T15:20:16+00:00"
+ },
+ "4271": {
+  "utt": "prepare coffee now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.8066,
+  "at": "2026-10-15T15:20:17+00:00"
+ },
+ "4988": {
+  "utt": "prepare a cup of coffee for me",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.6074,
+  "at": "2026-10-15T15:20:17+00:00"
+ },
+ "5017": {
+  "utt": "can you please make a coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.9086,
+  "at": "2026-10-15T15:20:18+00:00"
+ },
+ "5849": {
+  "utt": "i'd like a cappuccino please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "cappuccino"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 1.226,
+  "at": "2026-10-15T15:20:19+00:00"
+ },
+ "5850": {
+  "utt": "make me a cappuccino",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {
+     "drink": "cappuccino"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6005,
+  "at": "2026-10-15T15:20:20+00:00"
+ },
+ "5917": {
+  "utt": "make a coffee please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7135,
+  "at": "2026-10-15T15:20:21+00:00"
+ },
+ "6034": {
+  "utt": "coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 991,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.6137,
+  "at": "2026-10-15T15:20:21+00:00"
+ },
+ "6060": {
+  "utt": "please start the coffee pot",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 1.1257,
+  "at": "2026-10-15T15:20:23+00:00"
+ },
+ "6061": {
+  "utt": "make the coffee",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "coffee",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.5077,
+  "at": "2026-10-15T15:20:23+00:00"
+ },
+ "1070": {
+  "utt": "turn up the lights in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.6545,
+  "at": "2026-10-15T15:20:24+00:00"
+ },
+ "1360": {
+  "utt": "please raise the light i am not comfortable at this",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.8809,
+  "at": "2026-10-15T15:20:25+00:00"
+ },
+ "1756": {
+  "utt": "brighten the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6537,
+  "at": "2026-10-15T15:20:25+00:00"
+ },
+ "2082": {
+  "utt": "raise the light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6592,
+  "at": "2026-10-15T15:20:26+00:00"
+ },
+ "3762": {
+  "utt": "raise the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.8355,
+  "at": "2026-10-15T15:20:27+00:00"
+ },
+ "4004": {
+  "utt": "brighten living room lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.9199,
+  "at": "2026-10-15T15:20:28+00:00"
+ },
+ "4005": {
+  "utt": "raise living room lights half way",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.8193,
+  "at": "2026-10-15T15:20:28+00:00"
+ },
+ "467": {
+  "utt": "brighten my bedroom light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter",
+     "room": "bedroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.8158,
+  "at": "2026-10-15T15:20:29+00:00"
+ },
+ "5472": {
+  "utt": "brighten the lights in living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.5323,
+  "at": "2026-10-15T15:20:30+00:00"
+ },
+ "5502": {
+  "utt": "please make arrangements to make the hall so brighter",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter",
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.6939,
+  "at": "2026-10-15T15:20:31+00:00"
+ },
+ "5572": {
+  "utt": "increase the brightness of lights bedroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bedroom",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 1.1266,
+  "at": "2026-10-15T15:20:32+00:00"
+ },
+ "5574": {
+  "utt": "brighten of lights in living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 1.0771,
+  "at": "2026-10-15T15:20:33+00:00"
+ },
+ "5727": {
+  "utt": "brighten the light of hall",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "hallway",
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.6618,
+  "at": "2026-10-15T15:20:33+00:00"
+ },
+ "80": {
+  "utt": "set lights brightness higher",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "brighter"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.7027,
+  "at": "2026-10-15T15:20:34+00:00"
+ },
+ "1217": {
+  "utt": "olly change the lighting to blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "blue",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7451,
+  "at": "2026-10-15T15:20:35+00:00"
+ },
+ "1482": {
+  "utt": "can you make a red shade of light in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "color": "red",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1002,
+  "response_tokens": 27,
+  "thinking_tokens": 0,
+  "latency_s": 0.9004,
+  "at": "2026-10-15T15:20:36+00:00"
+ },
+ "1960": {
+  "utt": "change the light to pink color",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "pink"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.3151,
+  "at": "2026-10-15T15:20:37+00:00"
+ },
+ "2120": {
+  "utt": "turn lights blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6289,
+  "at": "2026-10-15T15:20:38+00:00"
+ },
+ "2122": {
+  "utt": "turn living room lights red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "red",
+     "room": "living room",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 27,
+  "thinking_tokens": 0,
+  "latency_s": 0.8178,
+  "at": "2026-10-15T15:20:39+00:00"
+ },
+ "2282": {
+  "utt": "set color blue for all lights of my house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "all",
+     "color": "blue",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.8169,
+  "at": "2026-10-15T15:20:39+00:00"
+ },
+ "2283": {
+  "utt": "i need to change my house lights color to blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "all",
+     "color": "blue",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.7159,
+  "at": "2026-10-15T15:20:40+00:00"
+ },
+ "2551": {
+  "utt": "change the lights in my home to green",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "all",
+     "action": "color",
+     "color": "green"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.9094,
+  "at": "2026-10-15T15:20:41+00:00"
+ },
+ "262": {
+  "utt": "turn the lights blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8253,
+  "at": "2026-10-15T15:20:42+00:00"
+ },
+ "263": {
+  "utt": "let's have the lights blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7167,
+  "at": "2026-10-15T15:20:43+00:00"
+ },
+ "2748": {
+  "utt": "can i change this light to orange",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "orange"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.9233,
+  "at": "2026-10-15T15:20:43+00:00"
+ },
+ "2821": {
+  "utt": "change light colors from blue to white",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "white"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7634,
+  "at": "2026-10-15T15:20:44+00:00"
+ },
+ "2822": {
+  "utt": "make the lights in the house red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "red",
+     "room": "all",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.5605,
+  "at": "2026-10-15T15:20:45+00:00"
+ },
+ "2975": {
+  "utt": "please change the light colors to red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "red",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8218,
+  "at": "2026-10-15T15:20:46+00:00"
+ },
+ "3449": {
+  "utt": "change lights from red to blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.1248,
+  "at": "2026-10-15T15:20:47+00:00"
+ },
+ "4027": {
+  "utt": "make light color red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "red",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.9929,
+  "at": "2026-10-15T15:20:48+00:00"
+ },
+ "4247": {
+  "utt": "house change all lights to blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "all",
+     "action": "color",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.6442,
+  "at": "2026-10-15T15:20:48+00:00"
+ },
+ "4248": {
+  "utt": "house lights blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "room": "all",
+     "color": "blue"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.9171,
+  "at": "2026-10-15T15:20:49+00:00"
+ },
+ "4249": {
+  "utt": "house can you make all the lights in the house blue",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "blue",
+     "action": "color",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 1.1263,
+  "at": "2026-10-15T15:20:50+00:00"
+ },
+ "456": {
+  "utt": "change the bedroom lights to green",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "green",
+     "room": "bedroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.9218,
+  "at": "2026-10-15T15:20:51+00:00"
+ },
+ "4826": {
+  "utt": "make the lights pink",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "pink"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6414,
+  "at": "2026-10-15T15:20:52+00:00"
+ },
+ "4827": {
+  "utt": "can the lights be changed to green",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "green"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.5559,
+  "at": "2026-10-15T15:20:53+00:00"
+ },
+ "498": {
+  "utt": "change the light color to red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "color",
+     "color": "red"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.5681,
+  "at": "2026-10-15T15:20:53+00:00"
+ },
+ "983": {
+  "utt": "change the color of the lights in my bedroom to red",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bedroom",
+     "action": "color",
+     "color": "red"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.5624,
+  "at": "2026-10-15T15:20:54+00:00"
+ },
+ "1030": {
+  "utt": "dim the lights in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.7549,
+  "at": "2026-10-15T15:20:54+00:00"
+ },
+ "16": {
+  "utt": "olly dim the lights in the hall",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.9538,
+  "at": "2026-10-15T15:20:55+00:00"
+ },
+ "17": {
+  "utt": "dim the lights in the hall",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.683,
+  "at": "2026-10-15T15:20:56+00:00"
+ },
+ "1778": {
+  "utt": "please dim the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.8041,
+  "at": "2026-10-15T15:20:57+00:00"
+ },
+ "2016": {
+  "utt": "lower lights in kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "kitchen",
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.6851,
+  "at": "2026-10-15T15:20:58+00:00"
+ },
+ "23": {
+  "utt": "dim the lights in the kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "kitchen"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.5631,
+  "at": "2026-10-15T15:20:58+00:00"
+ },
+ "2576": {
+  "utt": "please dim the lights in the bedroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bedroom",
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.6025,
+  "at": "2026-10-15T15:20:59+00:00"
+ },
+ "2645": {
+  "utt": "lower the lights in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.5994,
+  "at": "2026-10-15T15:20:59+00:00"
+ },
+ "3222": {
+  "utt": "i want a lower light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6358,
+  "at": "2026-10-15T15:21:00+00:00"
+ },
+ "3237": {
+  "utt": "dim the lights at the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.6387,
+  "at": "2026-10-15T15:21:01+00:00"
+ },
+ "3280": {
+  "utt": "lower the lights please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6531,
+  "at": "2026-10-15T15:21:01+00:00"
+ },
+ "3834": {
+  "utt": "turn down lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.7712,
+  "at": "2026-10-15T15:21:02+00:00"
+ },
+ "5349": {
+  "utt": "olly give me some dim light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "dimmer"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.4702,
+  "at": "2026-10-15T15:21:02+00:00"
+ },
+ "1554": {
+  "utt": "turn off the lamps",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8078,
+  "at": "2026-10-15T15:21:03+00:00"
+ },
+ "19": {
+  "utt": "olly turn the lights off in the bedroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bedroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.963,
+  "at": "2026-10-15T15:21:04+00:00"
+ },
+ "2230": {
+  "utt": "turn off kitchen light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "kitchen"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7027,
+  "at": "2026-10-15T15:21:05+00:00"
+ },
+ "2578": {
+  "utt": "turn off the porch light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "porch"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.4596,
+  "at": "2026-10-15T15:21:05+00:00"
+ },
+ "3098": {
+  "utt": "make the lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5221,
+  "at": "2026-10-15T15:21:06+00:00"
+ },
+ "3167": {
+  "utt": "turn my bedroom lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bedroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.038,
+  "at": "2026-10-15T15:21:07+00:00"
+ },
+ "3570": {
+  "utt": "please turn off the lights in patio",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "patio",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.7417,
+  "at": "2026-10-15T15:21:08+00:00"
+ },
+ "369": {
+  "utt": "switch off the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7314,
+  "at": "2026-10-15T15:21:08+00:00"
+ },
+ "3785": {
+  "utt": "turn off the bathroom light please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bathroom",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7716,
+  "at": "2026-10-15T15:21:09+00:00"
+ },
+ "3993": {
+  "utt": "can you make the lights go out",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7219,
+  "at": "2026-10-15T15:21:10+00:00"
+ },
+ "4171": {
+  "utt": "turn off the lights in the kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "kitchen"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7797,
+  "at": "2026-10-15T15:21:11+00:00"
+ },
+ "427": {
+  "utt": "turn off the lights in the bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bathroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7553,
+  "at": "2026-10-15T15:21:12+00:00"
+ },
+ "429": {
+  "utt": "lights off bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bathroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7162,
+  "at": "2026-10-15T15:21:12+00:00"
+ },
+ "4632": {
+  "utt": "please turn bedroom lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bedroom",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7182,
+  "at": "2026-10-15T15:21:13+00:00"
+ },
+ "4796": {
+  "utt": "shut off the lights in the bedroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "bedroom",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8404,
+  "at": "2026-10-15T15:21:14+00:00"
+ },
+ "5156": {
+  "utt": "turn the light off in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "living room",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.8158,
+  "at": "2026-10-15T15:21:15+00:00"
+ },
+ "5157": {
+  "utt": "olly turn the light off in the living room",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.9994,
+  "at": "2026-10-15T15:21:16+00:00"
+ },
+ "5242": {
+  "utt": "please turn the lights off in the bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bathroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.2961,
+  "at": "2026-10-15T15:21:17+00:00"
+ },
+ "5243": {
+  "utt": "siri please turn the lights off in the bathroom",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off",
+     "room": "bathroom"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8909,
+  "at": "2026-10-15T15:21:18+00:00"
+ },
+ "5584": {
+  "utt": "please turn the lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7823,
+  "at": "2026-10-15T15:21:19+00:00"
+ },
+ "6041": {
+  "utt": "hey olly turn off the light please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8176,
+  "at": "2026-10-15T15:21:19+00:00"
+ },
+ "6073": {
+  "utt": "turn off porch light",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "porch",
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 1.8397,
+  "at": "2026-10-15T15:21:21+00:00"
+ },
+ "914": {
+  "utt": "please turn lights off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 2.0471,
+  "at": "2026-10-15T15:21:23+00:00"
+ },
+ "999": {
+  "utt": "could you turn the light off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6149,
+  "at": "2026-10-15T15:21:24+00:00"
+ },
+ "1450": {
+  "utt": "turn the lights on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8969,
+  "at": "2026-10-15T15:21:25+00:00"
+ },
+ "1889": {
+  "utt": "put the disco lights on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "color": "purple",
+     "action": "color"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.8122,
+  "at": "2026-10-15T15:21:26+00:00"
+ },
+ "2076": {
+  "utt": "switch on all the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.7415,
+  "at": "2026-10-15T15:21:26+00:00"
+ },
+ "2470": {
+  "utt": "switch on the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8167,
+  "at": "2026-10-15T15:21:27+00:00"
+ },
+ "3522": {
+  "utt": "please turn on my balcony lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "room": "balcony",
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 1.1263,
+  "at": "2026-10-15T15:21:28+00:00"
+ },
+ "3641": {
+  "utt": "please turn on the lights in my house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 1.3306,
+  "at": "2026-10-15T15:21:30+00:00"
+ },
+ "4150": {
+  "utt": "overhead lights on please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7997,
+  "at": "2026-10-15T15:21:30+00:00"
+ },
+ "5096": {
+  "utt": "turn all lights on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on",
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.9381,
+  "at": "2026-10-15T15:21:31+00:00"
+ },
+ "5469": {
+  "utt": "please turn on the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7144,
+  "at": "2026-10-15T15:21:32+00:00"
+ },
+ "5470": {
+  "utt": "alexa please turn on the lights",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "lights",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6558,
+  "at": "2026-10-15T15:21:33+00:00"
+ },
+ "1098": {
+  "utt": "what day of the week does the fifteenth of march fall on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "March 15th depends on the year you are asking about, but you can easily check your calendar!",
+  "finish_reason": "STOP",
+  "input_tokens": 1002,
+  "response_tokens": 22,
+  "thinking_tokens": 0,
+  "latency_s": 0.7738,
+  "at": "2026-10-15T15:21:34+00:00"
+ },
+ "1351": {
+  "utt": "will it be nice outside this week",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I'm not connected to a weather service, so I can't check the forecast for you.",
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 21,
+  "thinking_tokens": 0,
+  "latency_s": 0.8197,
+  "at": "2026-10-15T15:21:34+00:00"
+ },
+ "14044": {
+  "utt": "what is the exchange rates in this region",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I'm sorry, I don't have access to current exchange rates.",
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 1.2243,
+  "at": "2026-10-15T15:21:36+00:00"
+ },
+ "14475": {
+  "utt": "detail for stock price",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I cannot check stock prices for you.",
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7104,
+  "at": "2026-10-15T15:21:36+00:00"
+ },
+ "14794": {
+  "utt": "what is elvis favorite ride",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Elvis Presley's favorite ride at Graceland was a three-wheeled motorcycle called a Cushman scooter, which he loved zooming around the property on.",
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 30,
+  "thinking_tokens": 0,
+  "latency_s": 0.8834,
+  "at": "2026-10-15T15:21:37+00:00"
+ },
+ "14917": {
+  "utt": "when's mark lanegan's next album out",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Mark Lanegan passed away in 2022, so there won't be any new albums from him.",
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 24,
+  "thinking_tokens": 0,
+  "latency_s": 0.7718,
+  "at": "2026-10-15T15:21:38+00:00"
+ },
+ "14995": {
+  "utt": "what does situation mean",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "A situation is a set of circumstances or the current state of affairs in a particular place and time.",
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 20,
+  "thinking_tokens": 0,
+  "latency_s": 0.6521,
+  "at": "2026-10-15T15:21:39+00:00"
+ },
+ "3960": {
+  "utt": "say the time",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "It's currently twelve o'clock.",
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 9,
+  "thinking_tokens": 0,
+  "latency_s": 0.866,
+  "at": "2026-10-15T15:21:39+00:00"
+ },
+ "4073": {
+  "utt": "what day is the fifth",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "The fifth of this month is a Thursday.",
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 9,
+  "thinking_tokens": 0,
+  "latency_s": 1.023,
+  "at": "2026-10-15T15:21:40+00:00"
+ },
+ "411": {
+  "utt": "can you tell me a joke",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Why don't scientists trust atoms? Because they make up everything!",
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6206,
+  "at": "2026-10-15T15:21:41+00:00"
+ },
+ "4362": {
+  "utt": "what time is it in cleveland",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I'm sorry, I don't have access to world clocks or live time information.",
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 19,
+  "thinking_tokens": 0,
+  "latency_s": 0.8065,
+  "at": "2026-10-15T15:21:42+00:00"
+ },
+ "4391": {
+  "utt": "what are the headlines on c. n. n.",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't browse the live news, but you can check CNN's website or app for the latest headlines.",
+  "finish_reason": "STOP",
+  "input_tokens": 1001,
+  "response_tokens": 24,
+  "thinking_tokens": 0,
+  "latency_s": 0.7862,
+  "at": "2026-10-15T15:21:43+00:00"
+ },
+ "5040": {
+  "utt": "what's the weather now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't check the weather, but you can look outside or check a weather app.",
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 19,
+  "thinking_tokens": 0,
+  "latency_s": 0.6678,
+  "at": "2026-10-15T15:21:43+00:00"
+ },
+ "5296": {
+  "utt": "olly get me the popular news from b. b. c.",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't check the news for you, but you can find the latest stories on the BBC website or app.",
+  "finish_reason": "STOP",
+  "input_tokens": 1003,
+  "response_tokens": 24,
+  "thinking_tokens": 0,
+  "latency_s": 0.9457,
+  "at": "2026-10-15T15:21:44+00:00"
+ },
+ "5590": {
+  "utt": "open temperature",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I cannot control the temperature.",
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 6,
+  "thinking_tokens": 0,
+  "latency_s": 0.85,
+  "at": "2026-10-15T15:21:45+00:00"
+ },
+ "5886": {
+  "utt": "hot topic",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "That sounds like a great store for band merch and alternative fashion, or maybe you're referring to a trending conversation topic!",
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 25,
+  "thinking_tokens": 0,
+  "latency_s": 0.741,
+  "at": "2026-10-15T15:21:46+00:00"
+ },
+ "6243": {
+  "utt": "i'm so happy today i got tickets for the concert",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "That's wonderful news, enjoy the concert!",
+  "finish_reason": "STOP",
+  "input_tokens": 1002,
+  "response_tokens": 10,
+  "thinking_tokens": 0,
+  "latency_s": 0.7155,
+  "at": "2026-10-15T15:21:47+00:00"
+ },
+ "6319": {
+  "utt": "do you think i should go to the theater today",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "That sounds like a fun idea, but it really depends on what's playing and if you have free time!",
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 23,
+  "thinking_tokens": 0,
+  "latency_s": 1.0202,
+  "at": "2026-10-15T15:21:48+00:00"
+ },
+ "6411": {
+  "utt": "what's the weather next wednesday",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I'm sorry, I don't have access to weather forecasts.",
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.7139,
+  "at": "2026-10-15T15:21:48+00:00"
+ },
+ "6438": {
+  "utt": "today i searched all over for my phone and couldn't find it",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "That must have been frustrating; I hope you managed to find it eventually!",
+  "finish_reason": "STOP",
+  "input_tokens": 1004,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.8199,
+  "at": "2026-10-15T15:21:49+00:00"
+ },
+ "6448": {
+  "utt": "trump",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Donald Trump is an American politician, businessman, and media personality who served as the 45th president of the United States.",
+  "finish_reason": "STOP",
+  "input_tokens": 991,
+  "response_tokens": 26,
+  "thinking_tokens": 0,
+  "latency_s": 0.9231,
+  "at": "2026-10-15T15:21:50+00:00"
+ },
+ "6559": {
+  "utt": "hey olly do you like my girlfriend",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "She seems like a great person!",
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 7,
+  "thinking_tokens": 0,
+  "latency_s": 0.816,
+  "at": "2026-10-15T15:21:51+00:00"
+ },
+ "8343": {
+  "utt": "is it wednesday",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "Let me check that for you.",
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 7,
+  "thinking_tokens": 0,
+  "latency_s": 0.7159,
+  "at": "2026-10-15T15:21:52+00:00"
+ },
+ "9979": {
+  "utt": "cook me some oats",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [],
+  "text": "I can't cook oats, but I can help you with your smart home devices!",
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 18,
+  "thinking_tokens": 0,
+  "latency_s": 0.7141,
+  "at": "2026-10-15T15:21:52+00:00"
+ },
+ "2566": {
+  "utt": "turn off my wemo socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8258,
+  "at": "2026-10-15T15:21:53+00:00"
+ },
+ "3077": {
+  "utt": "shut off the socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5193,
+  "at": "2026-10-15T15:21:54+00:00"
+ },
+ "3298": {
+  "utt": "power off the wemo plug",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6985,
+  "at": "2026-10-15T15:21:54+00:00"
+ },
+ "3326": {
+  "utt": "turn the plug off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7148,
+  "at": "2026-10-15T15:21:55+00:00"
+ },
+ "3774": {
+  "utt": "disable smart socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.714,
+  "at": "2026-10-15T15:21:56+00:00"
+ },
+ "3803": {
+  "utt": "please turn off the smart plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.741,
+  "at": "2026-10-15T15:21:57+00:00"
+ },
+ "388": {
+  "utt": "turn off the smart plug",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6101,
+  "at": "2026-10-15T15:21:57+00:00"
+ },
+ "4966": {
+  "utt": "hello i want to turn off my wemo plug",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1000,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7343,
+  "at": "2026-10-15T15:21:58+00:00"
+ },
+ "5652": {
+  "utt": "switch wemo plug socket off",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.9103,
+  "at": "2026-10-15T15:21:59+00:00"
+ },
+ "5856": {
+  "utt": "turn off smart plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5776,
+  "at": "2026-10-15T15:21:59+00:00"
+ },
+ "756": {
+  "utt": "can you turn off wemo plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "off"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.3333,
+  "at": "2026-10-15T15:22:01+00:00"
+ },
+ "322": {
+  "utt": "enable my plug",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8201,
+  "at": "2026-10-15T15:22:02+00:00"
+ },
+ "3394": {
+  "utt": "please turn on my wemo plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7223,
+  "at": "2026-10-15T15:22:02+00:00"
+ },
+ "389": {
+  "utt": "turn the smart plug on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5767,
+  "at": "2026-10-15T15:22:03+00:00"
+ },
+ "4201": {
+  "utt": "power on wemo",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7999,
+  "at": "2026-10-15T15:22:04+00:00"
+ },
+ "426": {
+  "utt": "power up the plug socket one",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6635,
+  "at": "2026-10-15T15:22:04+00:00"
+ },
+ "4618": {
+  "utt": "enable smart socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7908,
+  "at": "2026-10-15T15:22:05+00:00"
+ },
+ "4620": {
+  "utt": "turn on new smart socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.9702,
+  "at": "2026-10-15T15:22:06+00:00"
+ },
+ "4799": {
+  "utt": "please turn on the wemo plug socket",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8585,
+  "at": "2026-10-15T15:22:07+00:00"
+ },
+ "5069": {
+  "utt": "turn wemo on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.1737,
+  "at": "2026-10-15T15:22:08+00:00"
+ },
+ "5651": {
+  "utt": "turn wemo plug socket on",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "plug",
+    "args": {
+     "action": "on"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.1754,
+  "at": "2026-10-15T15:22:09+00:00"
+ },
+ "189": {
+  "utt": "mute volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8035,
+  "at": "2026-10-15T15:22:10+00:00"
+ },
+ "2795": {
+  "utt": "silence speakers",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 1.2257,
+  "at": "2026-10-15T15:22:11+00:00"
+ },
+ "2796": {
+  "utt": "silence volume on speakers",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.7075,
+  "at": "2026-10-15T15:22:12+00:00"
+ },
+ "3": {
+  "utt": "quiet",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 991,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.625,
+  "at": "2026-10-15T15:22:13+00:00"
+ },
+ "3582": {
+  "utt": "mute please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6278,
+  "at": "2026-10-15T15:22:13+00:00"
+ },
+ "3837": {
+  "utt": "mute the music",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6428,
+  "at": "2026-10-15T15:22:14+00:00"
+ },
+ "4653": {
+  "utt": "set the speakers to mute",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6465,
+  "at": "2026-10-15T15:22:15+00:00"
+ },
+ "4994": {
+  "utt": "please mute my speaker",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.662,
+  "at": "2026-10-15T15:22:15+00:00"
+ },
+ "804": {
+  "utt": "hey siri mute the speakers",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "mute"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5019,
+  "at": "2026-10-15T15:22:16+00:00"
+ },
+ "1048": {
+  "utt": "lower the speaker volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7774,
+  "at": "2026-10-15T15:22:17+00:00"
+ },
+ "1352": {
+  "utt": "please slow down volume of speaker",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6238,
+  "at": "2026-10-15T15:22:17+00:00"
+ },
+ "3139": {
+  "utt": "lower your volume please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.5453,
+  "at": "2026-10-15T15:22:18+00:00"
+ },
+ "3474": {
+  "utt": "please lower music volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6502,
+  "at": "2026-10-15T15:22:18+00:00"
+ },
+ "3486": {
+  "utt": "speak softer please",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7118,
+  "at": "2026-10-15T15:22:19+00:00"
+ },
+ "3811": {
+  "utt": "slow the volume speaker",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7552,
+  "at": "2026-10-15T15:22:20+00:00"
+ },
+ "4979": {
+  "utt": "please speak quieter to me",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6393,
+  "at": "2026-10-15T15:22:21+00:00"
+ },
+ "5219": {
+  "utt": "please reduce the speaker volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.684,
+  "at": "2026-10-15T15:22:21+00:00"
+ },
+ "5481": {
+  "utt": "cut down the volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7118,
+  "at": "2026-10-15T15:22:22+00:00"
+ },
+ "5611": {
+  "utt": "reduce volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_down"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6083,
+  "at": "2026-10-15T15:22:23+00:00"
+ },
+ "1374": {
+  "utt": "can you turn up your volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.4668,
+  "at": "2026-10-15T15:22:23+00:00"
+ },
+ "1630": {
+  "utt": "raise the volume of the current music",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7599,
+  "at": "2026-10-15T15:22:24+00:00"
+ },
+ "188": {
+  "utt": "volume up",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6817,
+  "at": "2026-10-15T15:22:24+00:00"
+ },
+ "258": {
+  "utt": "i can't hear you",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7169,
+  "at": "2026-10-15T15:22:25+00:00"
+ },
+ "261": {
+  "utt": "i can barely hear you",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.5995,
+  "at": "2026-10-15T15:22:26+00:00"
+ },
+ "4090": {
+  "utt": "turn up the volume on my speakers",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 997,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.8371,
+  "at": "2026-10-15T15:22:27+00:00"
+ },
+ "443": {
+  "utt": "raise volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 992,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6953,
+  "at": "2026-10-15T15:22:27+00:00"
+ },
+ "4831": {
+  "utt": "speaker volume increase",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.7767,
+  "at": "2026-10-15T15:22:28+00:00"
+ },
+ "5726": {
+  "utt": "can you speak louder",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.6552,
+  "at": "2026-10-15T15:22:29+00:00"
+ },
+ "691": {
+  "utt": "i can't hear just increase the volume",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "speaker",
+    "args": {
+     "action": "volume_up"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 999,
+  "response_tokens": 16,
+  "thinking_tokens": 0,
+  "latency_s": 0.8332,
+  "at": "2026-10-15T15:22:30+00:00"
+ },
+ "1059": {
+  "utt": "turn on the robot vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 1.2036,
+  "at": "2026-10-15T15:22:31+00:00"
+ },
+ "1151": {
+  "utt": "start vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.574,
+  "at": "2026-10-15T15:22:31+00:00"
+ },
+ "1152": {
+  "utt": "use vacuum cleaner in the hall",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6363,
+  "at": "2026-10-15T15:22:32+00:00"
+ },
+ "1575": {
+  "utt": "start the vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 1.0784,
+  "at": "2026-10-15T15:22:33+00:00"
+ },
+ "1941": {
+  "utt": "clean my house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5309,
+  "at": "2026-10-15T15:22:34+00:00"
+ },
+ "2054": {
+  "utt": "have my iroomba clean the house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 998,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5623,
+  "at": "2026-10-15T15:22:34+00:00"
+ },
+ "2434": {
+  "utt": "start robot vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.8048,
+  "at": "2026-10-15T15:22:35+00:00"
+ },
+ "25": {
+  "utt": "olly clean the flat",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.6524,
+  "at": "2026-10-15T15:22:36+00:00"
+ },
+ "28": {
+  "utt": "vacuum the house",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8695,
+  "at": "2026-10-15T15:22:36+00:00"
+ },
+ "29": {
+  "utt": "vacuum the house olly",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "all"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.5916,
+  "at": "2026-10-15T15:22:37+00:00"
+ },
+ "2903": {
+  "utt": "please start the vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7606,
+  "at": "2026-10-15T15:22:38+00:00"
+ },
+ "291": {
+  "utt": "vacuum the kitchen",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "kitchen"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 14,
+  "thinking_tokens": 0,
+  "latency_s": 0.8139,
+  "at": "2026-10-15T15:22:39+00:00"
+ },
+ "292": {
+  "utt": "turn on the vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.6775,
+  "at": "2026-10-15T15:22:39+00:00"
+ },
+ "2959": {
+  "utt": "initialize the robot vacuum",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7807,
+  "at": "2026-10-15T15:22:40+00:00"
+ },
+ "31": {
+  "utt": "hoover the hallway",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "hallway"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 1.0845,
+  "at": "2026-10-15T15:22:41+00:00"
+ },
+ "3658": {
+  "utt": "google i need the living room vacuumed can you turn on the vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 1005,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 1.1207,
+  "at": "2026-10-15T15:22:42+00:00"
+ },
+ "4043": {
+  "utt": "run the vacuum",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 993,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.7219,
+  "at": "2026-10-15T15:22:43+00:00"
+ },
+ "4356": {
+  "utt": "vacuum the living room carpet",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 995,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 0.6021,
+  "at": "2026-10-15T15:22:44+00:00"
+ },
+ "635": {
+  "utt": "please start vacuum cleaner",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {}
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 994,
+  "response_tokens": 8,
+  "thinking_tokens": 0,
+  "latency_s": 0.721,
+  "at": "2026-10-15T15:22:44+00:00"
+ },
+ "864": {
+  "utt": "robot vacuum the living room now",
+  "model": "gemini-3.5-flash-lite",
+  "calls": [
+   {
+    "name": "vacuum",
+    "args": {
+     "room": "living room"
+    }
+   }
+  ],
+  "text": null,
+  "finish_reason": "STOP",
+  "input_tokens": 996,
+  "response_tokens": 15,
+  "thinking_tokens": 0,
+  "latency_s": 1.0307,
+  "at": "2026-10-15T15:22:45+00:00"
+ }
+}
