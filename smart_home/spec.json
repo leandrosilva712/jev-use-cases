@@ -1,0 +1,139 @@
+{
+  "router": {
+    "question": "What is the person asking the smart home voice assistant to do?",
+    "no_call": "something other than a home device function, such as a question or small talk"
+  },
+  "functions": {
+    "lights": {
+      "description": "switch the lights on or off, change their brightness or colour",
+      "arguments": {
+        "action": {
+          "question": "Does the user want the lights switched on, switched off, made brighter, made dimmer or changed colour?",
+          "options": {
+            "on": "the lights switched on",
+            "off": "the lights switched off",
+            "brighter": "the lights made brighter, at a higher brightness",
+            "dimmer": "the lights made dimmer, at a lower brightness",
+            "color": "the lights changed to a particular colour"
+          }
+        },
+        "room": {
+          "question": "Which room's lights does the user mean?",
+          "stated": {
+            "question": "Does the user say which room's lights, such as the kitchen, the bedroom, the porch or the whole house?",
+            "true": "names a room or the whole house",
+            "false": "does not say which room"
+          },
+          "options": {
+            "kitchen": null,
+            "living room": "the living room or lounge",
+            "bedroom": null,
+            "bathroom": null,
+            "dining room": null,
+            "hallway": "the hallway or corridor",
+            "office": "the home office or study",
+            "den": null,
+            "garage": null,
+            "porch": "the porch at the front door",
+            "patio": "the paved patio outside",
+            "balcony": null,
+            "garden": "the garden or back yard",
+            "all": "the lights in every room of the house"
+          }
+        },
+        "color": {
+          "question": "Which colour does the user want the lights to be?",
+          "stated": {
+            "question": "Does the user name a colour for the lights, such as red, blue or white?",
+            "true": "names a colour",
+            "false": "does not name a colour"
+          },
+          "options": {
+            "red": null,
+            "orange": null,
+            "yellow": null,
+            "green": null,
+            "blue": null,
+            "purple": null,
+            "pink": null,
+            "white": null
+          }
+        }
+      }
+    },
+    "vacuum": {
+      "description": "start the robot vacuum or hoover cleaning the floors",
+      "arguments": {
+        "room": {
+          "question": "Which room does the user want vacuumed?",
+          "stated": {
+            "question": "Does the user say where to vacuum, such as the kitchen, the bedroom, the hallway or the whole house?",
+            "true": "names a room or the whole house",
+            "false": "does not say where to vacuum"
+          },
+          "options": {
+            "kitchen": null,
+            "living room": "the living room or lounge",
+            "bedroom": null,
+            "bathroom": null,
+            "dining room": null,
+            "hallway": "the hallway or corridor",
+            "office": "the home office or study",
+            "den": null,
+            "garage": null,
+            "porch": "the porch at the front door",
+            "patio": "the paved patio outside",
+            "balcony": null,
+            "garden": "the garden or back yard",
+            "all": "every room in the house"
+          }
+        }
+      }
+    },
+    "coffee": {
+      "description": "make a cup of coffee with the coffee machine",
+      "arguments": {
+        "drink": {
+          "question": "Which kind of coffee does the user want?",
+          "stated": {
+            "question": "Does the user name a kind of coffee, such as an espresso, a latte or a cappuccino?",
+            "true": "names a kind of coffee",
+            "false": "asks for coffee without saying which kind"
+          },
+          "options": {
+            "regular": "a plain ordinary cup of coffee",
+            "espresso": "a small strong shot of coffee",
+            "cappuccino": "a coffee with a thick foamy milk top",
+            "latte": "a mild milky coffee made with lots of steamed milk",
+            "americano": "a long black coffee, a shot topped up with hot water"
+          }
+        }
+      }
+    },
+    "plug": {
+      "description": "switch the smart plug or wemo socket on or off",
+      "arguments": {
+        "action": {
+          "question": "Does the user want the smart plug switched on or off?",
+          "options": {
+            "on": "the socket switched on, supplying power",
+            "off": "the socket switched off, cutting the power"
+          }
+        }
+      }
+    },
+    "speaker": {
+      "description": "change the speaker volume or mute it",
+      "arguments": {
+        "action": {
+          "question": "Does the user want the speaker louder, quieter or silenced?",
+          "options": {
+            "volume_up": "the sound made louder",
+            "volume_down": "the sound made quieter",
+            "mute": "the sound silenced completely"
+          }
+        }
+      }
+    }
+  }
+}

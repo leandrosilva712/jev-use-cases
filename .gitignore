@@ -4,3 +4,6 @@ __pycache__/
 .pytest_cache/
 *.pyc
 email_filter/results.json
+
+# Downloaded data (smart_home/download_massive.py)
+datasets/

@@ -1,0 +1,5 @@
+id,utt,expected_call,call,clarify,confidence,invalid,error
+2076,switch on all the lights,"lights(action=""on"", room=""all"")","lights(action=""on"")",False,0.82,False,
+5096,turn all lights on,"lights(action=""on"", room=""all"")","lights(action=""on"")",False,0.86,False,
+3,quiet,"speaker(action=""mute"")","speaker(action=""volume_down"")",False,0.92,False,
+25,olly clean the flat,"vacuum(room=""all"")",vacuum(),False,0.58,False,

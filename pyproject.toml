@@ -7,6 +7,9 @@ dependencies = [
     "typesafe-sdk>=0.7",
     "anthropic>=1.0",
     "python-dotenv>=1.0",
+    "pandas>=3.0.6",
+    "jsonschema>=4.26.0",
+    "tabulate>=0.10.0",
 ]
 
 [tool.uv]

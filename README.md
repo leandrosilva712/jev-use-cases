@@ -9,7 +9,7 @@ Two small, runnable use cases for TypeSafe's **Jev**, a decision-only model. You
 
 ## Setup with uv
 
-Requires [uv](https://docs.astral.sh/uv/) (it installs Python 3.11+ for you).
+Requires [uv](https://docs.astral.sh/uv/) (it installs Python 3.13, pinned in `.python-version`, for you).
 
 ```bash
 uv sync                      # creates .venv and installs the dependencies in pyproject.toml

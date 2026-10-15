@@ -1,0 +1,1129 @@
+You are writing the wording for Jev, a decision model from TypeSafe that fills
+function calls for a voice assistant. Jev generates no text. For every command
+it receives the command text plus a set of questions, and for each question it
+picks one of the options you describe (Choice) or gives the probability of yes
+(Noul). Your wording is the only thing Jev knows about the API: it never sees
+parameter names, question ids or this prompt.
+
+## The API
+
+```python
+"""The smart-home API that both Jev and the LLM baseline call.
+
+Plain typed functions, as in TypeSafe's function-calling cookbook: every
+argument Jev can fill is a Literal (a closed set of options). An argument with
+a default is optional; when the command doesn't mention it, the default stands.
+
+The bodies only echo the call: the PoC scores which call is chosen, it doesn't
+drive real devices.
+"""
+
+from __future__ import annotations
+
+from typing import Literal, Optional
+
+Room = Literal[
+    "kitchen", "living room", "bedroom", "bathroom", "dining room", "hallway",
+    "office", "den", "garage", "porch", "patio", "balcony", "garden", "all",
+]
+Color = Literal["red", "orange", "yellow", "green", "blue", "purple", "pink", "white"]
+Drink = Literal["regular", "espresso", "cappuccino", "latte", "americano"]
+
+
+def lights(
+    action: Literal["on", "off", "brighter", "dimmer", "color"],
+    room: Optional[Room] = None,
+    color: Optional[Color] = None,
+) -> str:
+    """Control the smart lights: switch them on or off, change brightness or colour."""
+    return _echo("lights", action=action, room=room, color=color)
+
+
+def vacuum(room: Optional[Room] = None) -> str:
+    """Start the robot vacuum cleaner, optionally in one room."""
+    return _echo("vacuum", room=room)
+
+
+def coffee(drink: Drink = "regular") -> str:
+    """Make a coffee with the coffee machine."""
+    return _echo("coffee", drink=drink)
+
+
+def plug(action: Literal["on", "off"]) -> str:
+    """Switch the smart plug (wemo socket) on or off."""
+    return _echo("plug", action=action)
+
+
+def speaker(action: Literal["volume_up", "volume_down", "mute"]) -> str:
+    """Change the speaker volume or mute it."""
+    return _echo("speaker", action=action)
+
+
+TOOLS = {fn.__name__: fn for fn in (lights, vacuum, coffee, plug, speaker)}
+
+# Routing option for commands that need no function (questions, chit-chat...).
+NO_CALL = "no_call"
+
+
+def _echo(name: str, **arguments) -> str:
+    shown = ", ".join(f'{k}="{v}"' for k, v in arguments.items() if v is not None)
+    return f"{name}({shown})"
+```
+
+## How Jev reads your wording
+
+- The command is a raw voice transcript: lowercase, no punctuation, sometimes
+  with a wake word or filler, often indirect rather than a direct instruction.
+- Jev reads each question and option literally and makes a quick judgement,
+  like a person glancing at the words. It understands paraphrase on its own:
+  you do not need to list the ways users might phrase something.
+- What Jev needs from an option is its scope: a precise, self-contained
+  definition of what that value is. When each option is defined exactly,
+  options that sit close together separate naturally, without one having to
+  mention or deny another.
+- Extra words cost accuracy. Long lists of phrasings, exclusions ("Not ...")
+  and references to other options blur the scope and make options overlap.
+
+## What to write
+
+Follow the style of TypeSafe's function-calling cookbook: short, plain, lower
+case phrases, no full stops, no colons, no lists of phrasings, no "Not ..."
+clauses, and no option that mentions another option.
+
+- "router.question": one short question saying who is speaking and to what
+  kind of assistant, and asking what they want it to do.
+- function "description": what the function does, as a short verb phrase of
+  about 4 to 10 words. Name the device the way users do; one alternative name
+  (a brand or nickname) is fine.
+- "router.no_call": a short phrase for commands that need no function, such
+  as a question or small talk.
+- "question" per argument: a short, specific question about what the user
+  wants, never using the parameter name. When there are only a few options,
+  it can name them ("does the user want ..., ... or ...?").
+- "options": a noun phrase of about 3 to 12 words defining what the value is.
+  Give the core meaning precisely; at most one alternative name for the same
+  thing ("a candlestick or OHLC chart"). Word sibling options in parallel, so
+  the difference is in the definitions themselves ("a fast one" / "a slow
+  one"). Use null when the name alone is already a precise definition (a
+  colour like "red", a room like "kitchen").
+- "stated", only for arguments with a default: a yes/no question asking
+  whether the user says anything about that argument at all. If not, the
+  default is used. This question is where examples belong: end it with "such
+  as ..." and two to four typical values, including the one meaning "all",
+  when there is one. "true" and "false" are short phrases saying what yes and
+  no mean; "true" is always the yes case.
+- When several functions share an argument type, keep its options consistent,
+  adapting each line to what that device acts on (a room for one device may
+  mean all of its units for another).
+- Plain British English.
+
+Before writing, think about how users really ask for each value and which
+values are easiest to confuse, then choose the few words that define each
+value's scope exactly. Put that thinking into the definitions, not into lists.
+
+## Example, for a different API (a car assistant)
+
+```python
+def windows(
+    action: Literal["open", "close", "vent"],
+    seat: Optional[Literal["driver", "passenger", "rear left", "rear right", "all"]] = None,
+) -> str:
+    """Open or close the car windows."""
+```
+
+Too little, which gives Jev nothing to go on:
+
+  "vent": "Vent mode."
+  "all": "All seats."
+
+Too much, which blurs the scope:
+
+  "vent": "Open it only a little for air: crack it, a bit of fresh air, it's
+           stuffy in here. Not fully open like the open option."
+
+The style to follow:
+
+{
+  "router": {
+    "question": "What is the driver asking the car assistant to do?",
+    "no_call": "something other than a car function, such as a question or small talk"
+  },
+  "functions": {
+    "windows": {
+      "description": "open or close the car windows",
+      "arguments": {
+        "action": {
+          "question": "Does the driver want the window opened, closed or opened slightly?",
+          "options": {
+            "open": "the window opened all the way",
+            "close": "the window shut",
+            "vent": "the window opened slightly, for a little fresh air"
+          }
+        },
+        "seat": {
+          "question": "Which window does the driver mean?",
+          "stated": {
+            "question": "Does the driver say which window, such as their own, the passenger's, a back one or all of them?",
+            "true": "names a window or all the windows",
+            "false": "does not say which window"
+          },
+          "options": {
+            "driver": "the driver's own window",
+            "passenger": "the front passenger's window",
+            "rear left": "the back window on the left",
+            "rear right": "the back window on the right",
+            "all": "every window in the car"
+          }
+        }
+      }
+    }
+  }
+}
+
+## Your output
+
+Return only JSON that matches this JSON Schema:
+
+{
+  "type": "object",
+  "properties": {
+    "router": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "no_call": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "question",
+        "no_call"
+      ],
+      "additionalProperties": false
+    },
+    "functions": {
+      "type": "object",
+      "properties": {
+        "lights": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "on": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "off": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "brighter": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "dimmer": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "color": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "on",
+                        "off",
+                        "brighter",
+                        "dimmer",
+                        "color"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                },
+                "room": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "stated": {
+                      "type": "object",
+                      "properties": {
+                        "question": {
+                          "type": "string"
+                        },
+                        "true": {
+                          "type": "string"
+                        },
+                        "false": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "question",
+                        "true",
+                        "false"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "kitchen": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "living room": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "bedroom": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "bathroom": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "dining room": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "hallway": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "office": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "den": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "garage": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "porch": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "patio": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "balcony": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "garden": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "all": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kitchen",
+                        "living room",
+                        "bedroom",
+                        "bathroom",
+                        "dining room",
+                        "hallway",
+                        "office",
+                        "den",
+                        "garage",
+                        "porch",
+                        "patio",
+                        "balcony",
+                        "garden",
+                        "all"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "stated",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                },
+                "color": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "stated": {
+                      "type": "object",
+                      "properties": {
+                        "question": {
+                          "type": "string"
+                        },
+                        "true": {
+                          "type": "string"
+                        },
+                        "false": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "question",
+                        "true",
+                        "false"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "red": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "orange": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "yellow": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "green": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "blue": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "purple": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "pink": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "white": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "red",
+                        "orange",
+                        "yellow",
+                        "green",
+                        "blue",
+                        "purple",
+                        "pink",
+                        "white"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "stated",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action",
+                "room",
+                "color"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "description",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        "vacuum": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "room": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "stated": {
+                      "type": "object",
+                      "properties": {
+                        "question": {
+                          "type": "string"
+                        },
+                        "true": {
+                          "type": "string"
+                        },
+                        "false": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "question",
+                        "true",
+                        "false"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "kitchen": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "living room": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "bedroom": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "bathroom": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "dining room": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "hallway": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "office": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "den": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "garage": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "porch": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "patio": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "balcony": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "garden": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "all": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kitchen",
+                        "living room",
+                        "bedroom",
+                        "bathroom",
+                        "dining room",
+                        "hallway",
+                        "office",
+                        "den",
+                        "garage",
+                        "porch",
+                        "patio",
+                        "balcony",
+                        "garden",
+                        "all"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "stated",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "room"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "description",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        "coffee": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "drink": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "stated": {
+                      "type": "object",
+                      "properties": {
+                        "question": {
+                          "type": "string"
+                        },
+                        "true": {
+                          "type": "string"
+                        },
+                        "false": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "question",
+                        "true",
+                        "false"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "regular": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "espresso": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "cappuccino": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "latte": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "americano": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "regular",
+                        "espresso",
+                        "cappuccino",
+                        "latte",
+                        "americano"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "stated",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "drink"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "description",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        "plug": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "on": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "off": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "on",
+                        "off"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "description",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        "speaker": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "volume_up": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "volume_down": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "mute": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "volume_up",
+                        "volume_down",
+                        "mute"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "description",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "lights",
+        "vacuum",
+        "coffee",
+        "plug",
+        "speaker"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "router",
+    "functions"
+  ],
+  "additionalProperties": false
+}
