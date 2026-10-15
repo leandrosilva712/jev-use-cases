@@ -4,12 +4,12 @@ Fetches the official archive from Amazon's S3 bucket, checks it against a
 pinned SHA-256 so everyone works from the same data, and extracts only the two
 locales the PoC uses:
 
-  datasets/massive/en-US.jsonl   source of commands.csv
-  datasets/massive/pt-PT.jsonl   optional Portuguese bonus (matching ids)
+  dataset/raw/massive/en-US.jsonl   source of dataset/commands.csv
+  dataset/raw/massive/pt-PT.jsonl   optional Portuguese bonus (matching ids)
 
-datasets/ is git-ignored. Safe to re-run: existing files are reused.
+dataset/raw/ is git-ignored. Safe to re-run: existing files are reused.
 
-Run:  python download_massive.py
+Run (from smart_home/):  python -m dataset.download_massive
 """
 
 from __future__ import annotations
@@ -19,13 +19,11 @@ import tarfile
 import urllib.request
 from pathlib import Path
 
+from common.paths import MASSIVE_ARCHIVE as ARCHIVE, MASSIVE_DIR, RAW_DIR as DATASETS_DIR, ROOT
+
 URL = "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
 SHA256 = "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577"
 LOCALES = ("en-US", "pt-PT")
-
-DATASETS_DIR = Path(__file__).parent / "datasets"
-ARCHIVE = DATASETS_DIR / "amazon-massive-dataset-1.1.tar.gz"
-MASSIVE_DIR = DATASETS_DIR / "massive"
 
 
 def sha256(path: Path) -> str:
@@ -38,9 +36,9 @@ def sha256(path: Path) -> str:
 
 def download() -> None:
     if ARCHIVE.exists() and sha256(ARCHIVE) == SHA256:
-        print(f"Archive already downloaded: {ARCHIVE.relative_to(DATASETS_DIR.parent)}")
+        print(f"Archive already downloaded: {ARCHIVE.relative_to(ROOT)}")
         return
-    DATASETS_DIR.mkdir(exist_ok=True)
+    DATASETS_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Downloading {URL} (~40 MB) ...")
     partial = ARCHIVE.with_suffix(".part")
     urllib.request.urlretrieve(URL, partial)
@@ -61,7 +59,7 @@ def extract() -> None:
         for m in members:
             m.name = Path(m.name).name  # flatten 1.1/data/en-US.jsonl -> en-US.jsonl
         tar.extractall(MASSIVE_DIR, members=members, filter="data")
-    print(f"Extracted {', '.join(sorted(m.name for m in members))} to {MASSIVE_DIR.relative_to(DATASETS_DIR.parent)}")
+    print(f"Extracted {', '.join(sorted(m.name for m in members))} to {MASSIVE_DIR.relative_to(ROOT)}")
 
 
 def main() -> None:
@@ -70,7 +68,7 @@ def main() -> None:
     for locale in LOCALES:
         path = MASSIVE_DIR / f"{locale}.jsonl"
         with path.open(encoding="utf-8") as f:
-            print(f"  {path.relative_to(DATASETS_DIR.parent)}: {sum(1 for _ in f):,} rows")
+            print(f"  {path.relative_to(ROOT)}: {sum(1 for _ in f):,} rows")
 
 
 if __name__ == "__main__":

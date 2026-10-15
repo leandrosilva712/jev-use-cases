@@ -14,39 +14,18 @@ Question ids:
   fn.arg           choice  the value of an argument
   fn.arg?          noul    does the command mention this optional argument?
 
-Run:  python build_questions.py   (writes questions.json for review)
+Run (from smart_home/):  python -m jev.build_questions   (writes jev/questions.json for review)
 """
 
 from __future__ import annotations
 
-import inspect
 import json
-import typing
-from pathlib import Path
 
-from smart_home_api import NO_CALL, TOOLS
+from common.api import NO_CALL, TOOLS
+from common.paths import QUESTIONS_PATH, ROOT, SPEC_PATH
+from common.schema import closed_sets
 
-SPEC_PATH = Path(__file__).with_name("spec.json")
-QUESTIONS_PATH = Path(__file__).with_name("questions.json")
 ROUTE = "__tool__"
-
-
-def closed_sets(fn) -> dict[str, tuple[list[str], bool]]:
-    """{argument: (options, optional)} for every Literal argument of fn."""
-    hints = typing.get_type_hints(fn)
-    params = inspect.signature(fn).parameters
-    shapes = {}
-    for name, hint in hints.items():
-        if name == "return":
-            continue
-        args = [a for a in typing.get_args(hint) if a is not type(None)]
-        if typing.get_origin(hint) is typing.Union and len(args) == 1:
-            hint = args[0]  # Optional[Literal[...]]
-        if typing.get_origin(hint) is not typing.Literal:
-            continue  # free values (numbers, text...) get no question
-        optional = params[name].default is not inspect.Parameter.empty
-        shapes[name] = (list(typing.get_args(hint)), optional)
-    return shapes
 
 
 def check_spec(spec: dict) -> None:
@@ -100,7 +79,7 @@ def main() -> None:
     questions = build_questions()
     QUESTIONS_PATH.write_text(json.dumps(questions, indent=2) + "\n")
 
-    print(f"{len(questions)} questions per command, written to {QUESTIONS_PATH.name}:")
+    print(f"{len(questions)} questions per command, written to {QUESTIONS_PATH.relative_to(ROOT)}:")
     for qid, q in questions.items():
         n = f"{len(q['criteria'])} options" if q["type"] == "choice" else "yes/no"
         print(f"  {qid:<16}{q['type']:<8}{n:<12}{q['instructions']}")

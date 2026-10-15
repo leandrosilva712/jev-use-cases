@@ -13,41 +13,37 @@ then assembles the call from the answers that apply:
   5. Confidence gate: below `threshold`, ask "did you mean ...?" (clarify)
      instead of acting.
 
-stated_cutoff and threshold are tuned on the dev rows only (tune_jev.py) and
-stored in jev_config.json.
+stated_cutoff and threshold are tuned on the dev rows only (jev/tune.py) and
+stored in jev/config.json.
 
-Run:  python jev_assistant.py --split dev     (calls Jev for rows not cached yet,
-                                              then writes results/jev_dev.jsonl)
+Run (from smart_home/):
+  python -m jev.assistant --split dev   (calls Jev for rows not cached yet,
+                                         then writes results/jev/dev.jsonl)
 """
 
 from __future__ import annotations
 
 import argparse
-import inspect
 import json
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from pathlib import Path
 
 import pandas as pd
-from dotenv import load_dotenv
 from typesafe_sdk import RetryPolicy, TypeSafeClient
 
-from build_jev_questions import ROUTE, closed_sets
-from smart_home_api import NO_CALL, TOOLS
+from common.api import NO_CALL, TOOLS
+from common.paths import COMMANDS_CSV, JEV_CONFIG_PATH as CONFIG_PATH, QUESTIONS_PATH, ROOT, load_env, \
+    system_results
+from common.schema import DEFAULTS, closed_sets
+from jev.build_questions import ROUTE
 
-HERE = Path(__file__).parent
-QUESTIONS_PATH = HERE / "questions.json"
-CONFIG_PATH = HERE / "jev_config.json"
-RESULTS_DIR = HERE / "results"
-RAW_PATH = RESULTS_DIR / "jev_raw.json"
+SYSTEM = "jev"
+RESULTS_DIR = system_results(SYSTEM)
+RAW_PATH = RESULTS_DIR / "raw.json"
 
 MODEL = "jev-1.13.0"  # pinned so answers don't change mid-test
 DEFAULT_CONFIG = {"model": MODEL, "stated_cutoff": 0.5, "threshold": 0.0}
-
-DEFAULTS = {name: {arg: p.default for arg, p in inspect.signature(fn).parameters.items()}
-            for name, fn in TOOLS.items()}
 
 
 @dataclass
@@ -93,8 +89,7 @@ def assemble(answers: dict, stated_cutoff: float, threshold: float) -> Call:
 
 class JevAssistant:
     def __init__(self, model: str = MODEL):
-        load_dotenv(HERE / ".env")
-        load_dotenv(HERE.parent / ".env")
+        load_env()  # TYPESAFE_API_KEY
         self.model = model
         self.questions = json.loads(QUESTIONS_PATH.read_text())
         self.client = TypeSafeClient(model=model, retry=RetryPolicy(max_retries=3))
@@ -130,7 +125,6 @@ def run(commands: pd.DataFrame) -> dict:
     raw = load_raw()
     todo = commands[~commands["id"].astype(str).isin(raw)]
     if len(todo):
-        RESULTS_DIR.mkdir(exist_ok=True)
         jev = JevAssistant()
         jev.warm_up()
         for i, row in enumerate(todo.itertuples(), 1):
@@ -148,7 +142,7 @@ def predictions(commands: pd.DataFrame, raw: dict, config: dict) -> list[dict]:
         r = raw[str(row.id)]
         call = assemble(r["answers"], config["stated_cutoff"], config["threshold"])
         records.append({
-            "id": row.id, "split": row.split, "system": "jev", "model": r["model"],
+            "id": row.id, "split": row.split, "system": SYSTEM, "model": r["model"],
             "function": call.function, "args": call.args, "call": str(call),
             "clarify": call.clarify, "confidence": round(call.confidence, 4), "weakest": call.weakest,
             "latency_s": r["latency_s"], "input_tokens": r["input_tokens"],
@@ -162,14 +156,14 @@ def main() -> None:
     parser.add_argument("--split", choices=["dev", "test", "all"], default="dev")
     split = parser.parse_args().split
 
-    commands = pd.read_csv(HERE / "commands.csv")
+    commands = pd.read_csv(COMMANDS_CSV)
     if split != "all":
         commands = commands[commands["split"] == split]
     raw = run(commands)
     config = load_config()
-    out = RESULTS_DIR / f"jev_{split}.jsonl"
+    out = RESULTS_DIR / f"{split}.jsonl"
     out.write_text("".join(json.dumps(p) + "\n" for p in predictions(commands, raw, config)))
-    print(f"Wrote {out.relative_to(HERE)} (stated_cutoff={config['stated_cutoff']}, threshold={config['threshold']})")
+    print(f"Wrote {out.relative_to(ROOT)} (stated_cutoff={config['stated_cutoff']}, threshold={config['threshold']})")
 
 
 if __name__ == "__main__":

@@ -7,10 +7,11 @@
      asking costs 0. With WRONG_COST = 1, acting wrongly undoes one right
      action. Ties go to the lower threshold (fewer questions to the user).
 
-Writes jev_config.json, which jev_assistant.py uses for the test run.
+Writes jev/config.json, which jev.assistant uses for the test run.
 
-Run:  python jev_assistant.py --split dev   (fills the cache)
-      python tune_jev.py
+Run (from smart_home/):
+  python -m jev.assistant --split dev   (fills the cache)
+  python -m jev.tune
 """
 
 from __future__ import annotations
@@ -20,8 +21,9 @@ import json
 import numpy as np
 import pandas as pd
 
-from evaluate import score
-from jev_assistant import CONFIG_PATH, HERE, MODEL, load_raw, predictions
+from common.paths import COMMANDS_CSV, ROOT
+from evaluation.evaluate import score
+from jev.assistant import CONFIG_PATH, MODEL, load_raw, predictions
 
 WRONG_COST = 1.0
 CUTOFFS = np.round(np.arange(0.20, 0.801, 0.05), 2)
@@ -29,12 +31,12 @@ THRESHOLDS = np.round(np.arange(0.0, 0.951, 0.025), 3)
 
 
 def main() -> None:
-    commands = pd.read_csv(HERE / "commands.csv")
+    commands = pd.read_csv(COMMANDS_CSV)
     dev = commands[commands["split"] == "dev"]
     raw = load_raw()
     missing = set(dev["id"].astype(str)) - set(raw)
     if missing:
-        raise SystemExit(f"{len(missing)} dev rows not cached: run  python jev_assistant.py --split dev")
+        raise SystemExit(f"{len(missing)} dev rows not cached: run  python -m jev.assistant --split dev")
 
     def scored(cutoff: float, threshold: float) -> pd.DataFrame:
         config = {"stated_cutoff": cutoff, "threshold": threshold}
@@ -72,7 +74,7 @@ def main() -> None:
         "dev_after_gate": {k: int(chosen[k]) for k in ("acted right", "acted wrong", "clarify")},
     }
     CONFIG_PATH.write_text(json.dumps(config, indent=2) + "\n")
-    print(f"Saved {CONFIG_PATH.name}: {config}")
+    print(f"Saved {CONFIG_PATH.relative_to(ROOT)}: {config}")
 
     weak = s[~s["call_ok"]][["utt", "expected_call", "call", "confidence"]]
     print(f"\nDev mistakes before the gate ({len(weak)}):")

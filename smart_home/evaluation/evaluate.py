@@ -1,6 +1,6 @@
 """Score function-calling predictions against the answer key in commands.csv.
 
-Every system (Jev, the Gemini baseline...) writes results/<system>_<split>.jsonl
+Every system (Jev, the LLM baseline...) writes results/<system>/<split>.jsonl
 with one record per command:
   id, system, model, function, args, clarify, latency_s, input_tokens,
   output_tokens, invalid, error
@@ -15,35 +15,28 @@ Metrics, all on the same rows:
   - invalid calls, latency (typical and slowest), tokens and cost per 1,000
     commands from the vendors' list prices
 
-Run:  python evaluate.py --split test             (every results/*_test.jsonl)
-      python evaluate.py results/jev_dev.jsonl    (specific files)
+Run (from smart_home/):
+  python -m evaluation.evaluate --split test            (every results/*/test.jsonl)
+  python -m evaluation.evaluate results/jev/dev.jsonl   (specific files)
 """
 
 from __future__ import annotations
 
 import argparse
-import inspect
 import json
 from pathlib import Path
 
 import pandas as pd
 
-from build_jev_questions import closed_sets
-from smart_home_api import NO_CALL, TOOLS
-
-HERE = Path(__file__).parent
-RESULTS_DIR = HERE / "results"
+from common.api import NO_CALL, TOOLS
+from common.paths import COMMANDS_CSV, RESULTS_DIR, ROOT
+from common.schema import DEFAULTS, OPTIONS
 
 # USD per token (input, output), list prices; matched by model-name prefix.
 PRICING = {
     "jev-": (42 / 1e9, 0.0),                              # $42 per billion input, output free
     "gemini-3.5-flash-lite": (0.30 / 1e6, 2.50 / 1e6),  # paid tier; thinking tokens bill as output
 }
-
-OPTIONS = {name: {arg: (set(opts), optional) for arg, (opts, optional) in closed_sets(fn).items()}
-           for name, fn in TOOLS.items()}
-DEFAULTS = {name: {arg: p.default for arg, p in inspect.signature(fn).parameters.items()}
-            for name, fn in TOOLS.items()}
 
 
 def normalise(function: str, args: dict) -> tuple[dict, bool]:
@@ -159,11 +152,11 @@ def main() -> None:
     parser.add_argument("files", nargs="*", type=Path)
     parser.add_argument("--split", default="test")
     a = parser.parse_args()
-    files = a.files or sorted(RESULTS_DIR.glob(f"*_{a.split}.jsonl"))
+    files = [p.resolve() for p in a.files] or sorted(RESULTS_DIR.glob(f"*/{a.split}.jsonl"))
     if not files:
-        raise SystemExit(f"No results/*_{a.split}.jsonl files yet")
+        raise SystemExit(f"No results/*/{a.split}.jsonl files yet")
 
-    commands = pd.read_csv(HERE / "commands.csv")
+    commands = pd.read_csv(COMMANDS_CSV)
     table, extra = {}, []
     for path in files:
         records = load(path)
@@ -178,12 +171,14 @@ def main() -> None:
             .to_csv(out, index=False)
 
     summary = pd.DataFrame(table)
-    report = f"## Results ({', '.join(p.name for p in files)})\n\n" + summary.to_markdown() \
+    shown = [str(p.relative_to(RESULTS_DIR)) for p in files]
+    report = f"## Results ({', '.join(shown)})\n\n" + summary.to_markdown() \
         + "\n\n" + "\n\n".join(extra) + "\n"
     print(report)
-    out = RESULTS_DIR / f"summary_{a.split if not a.files else '_'.join(p.stem for p in files)}.md"
+    tag = a.split if not a.files else "_".join(f"{p.parent.name}-{p.stem}" for p in files)
+    out = RESULTS_DIR / f"summary_{tag}.md"
     out.write_text(report)
-    print(f"Saved {out.relative_to(HERE)}; mistakes and clarify cases in results/*_mistakes.csv")
+    print(f"Saved {out.relative_to(ROOT)}; mistakes and clarify cases in results/<system>/<split>_mistakes.csv")
 
 
 if __name__ == "__main__":

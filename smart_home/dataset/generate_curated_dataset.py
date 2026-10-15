@@ -1,7 +1,7 @@
 """Generate the smart-home dataset with its answer key (steps 2b and 3).
 
-Builds commands.csv from the MASSIVE en-US file in datasets/massive (run
-download_massive.py first). Rows are picked, never edited: a command is kept
+Builds dataset/commands.csv from the MASSIVE en-US file in dataset/raw/massive
+(run  python -m dataset.download_massive  first). Rows are picked, never edited: a command is kept
 only if every argument it carries maps to a clear, closed option that Jev can
 choose from. Each row gets the expected function call as its answer key.
 
@@ -22,24 +22,21 @@ Output columns: id, split (dev/test), partition, scenario, intent, utt, slots
 null or the API default when the command doesn't mention it) and expected_call
 (readable form, defaults left out).
 
-Run:  python generate_curated_dataset.py
+Run (from smart_home/):  python -m dataset.generate_curated_dataset
 """
 
 from __future__ import annotations
 
-import inspect
 import json
 import random
 import re
 from collections import Counter
-from pathlib import Path
 
 import pandas as pd
 
-from build_jev_questions import closed_sets
-from smart_home_api import TOOLS
-
-DATA_DIR = Path(__file__).parent / "datasets" / "massive"
+from common.api import TOOLS
+from common.paths import COMMANDS_CSV, MASSIVE_DIR as DATA_DIR, ROOT
+from common.schema import DEFAULTS, OPTIONS
 SEED = 42
 N_DEV = 50
 N_TEST = 200
@@ -101,12 +98,10 @@ DRINKS = {"espresso": "espresso", "cappuccino": "cappuccino", "capuccino": "capp
 ALL_ROOMS_PATTERN = re.compile(r"\b(all|every)\b[\w\s]*\blights?\b|\b(house|home)\b")
 
 # Target functions and the options of each argument come from the typed API
-# (smart_home_api.py), shared with the Jev and LLM steps.
-FUNCTIONS = {name: {arg: options for arg, (options, _) in closed_sets(fn).items()}
-             for name, fn in TOOLS.items()}
-# Value used when the command doesn't mention the argument: the API's default.
-DEFAULTS = {name: {arg: p.default for arg, p in inspect.signature(fn).parameters.items()}
-            for name, fn in TOOLS.items()}
+# (common/api.py), shared with the Jev and LLM steps. DEFAULTS is the value
+# used when the command doesn't mention the argument.
+FUNCTIONS = {name: {arg: options for arg, (options, _) in shapes.items()}
+             for name, shapes in OPTIONS.items()}
 
 # Free-value slots Jev can't fill (times, amounts, dates...): drop rows that have them.
 FREE_SLOTS = {"time", "date", "change_amount", "general_frequency", "timeofday",
@@ -293,10 +288,10 @@ def main() -> None:
     commands["slots"] = commands["slots"].apply(json.dumps)
     commands = commands[["id", "split", "partition", "scenario", "intent", "utt", "slots",
                          "function", "expected_args", "expected_call"]]
-    commands.to_csv("commands.csv", index=False)
+    commands.to_csv(COMMANDS_CSV, index=False)
 
     assert len(commands) == N_DEV + N_TEST, len(commands)
-    print(f"Saved {len(commands)} commands to commands.csv "
+    print(f"Saved {len(commands)} commands to {COMMANDS_CSV.relative_to(ROOT)} "
           f"({(commands['split'] == 'dev').sum()} dev / {(commands['split'] == 'test').sum()} test)\n")
     print(pd.crosstab(commands["function"], commands["split"], margins=True), "\n")
     print("Source partitions:", Counter(commands["partition"]), "\n")

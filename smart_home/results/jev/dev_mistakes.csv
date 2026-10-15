@@ -1,0 +1,2 @@
+id,utt,expected_call,call,clarify,confidence,invalid,error
+26,clean the flat,"vacuum(room=""all"")",vacuum(),False,0.86,False,

@@ -5,5 +5,5 @@ __pycache__/
 *.pyc
 email_filter/results.json
 
-# Downloaded data (smart_home/download_massive.py)
-datasets/
+# Downloaded data (smart_home/dataset/download_massive.py)
+smart_home/dataset/raw/

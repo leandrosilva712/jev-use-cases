@@ -3,7 +3,7 @@
 TypeSafe's function-calling cookbook: the structure of the questions comes from
 the type hints, the wording from spec.json, and "an LLM can write it for you
 from the signatures". This script builds that prompt from the source of
-smart_home_api.py, so the LLM sees only the API, never the dataset, and the
+common/api.py, so the LLM sees only the API, never the dataset, and the
 wording can't be tuned to the test commands.
 
 The shape of spec.json is a JSON Schema generated from the API (spec_schema):
@@ -16,12 +16,12 @@ If the API can't be used (no SDK, no credentials, an API error, a refusal or a
 truncated reply), the script falls back to writing the prompt to spec_prompt.txt
 and copying it to the clipboard, to paste into a fresh Claude chat in the browser.
 
-Run:
-  python generate_spec.py                  ask Claude, or fall back to the prompt file
-  python generate_spec.py --prompt-only    just write spec_prompt.txt (and copy it)
-  python generate_spec.py --check FILE     check a JSON reply pasted from the browser
-                                           and write spec.json
-Then run build_questions.py.
+Run (from smart_home/):
+  python -m jev.generate_spec                  ask Claude, or fall back to the prompt file
+  python -m jev.generate_spec --prompt-only    just write jev/spec_prompt.txt (and copy it)
+  python -m jev.generate_spec --check FILE     check a JSON reply pasted from the browser
+                                               and write jev/spec.json
+Then run  python -m jev.build_questions
 """
 
 from __future__ import annotations
@@ -34,15 +34,16 @@ from pathlib import Path
 
 import jsonschema
 
-import smart_home_api
-from build_questions import SPEC_PATH, check_spec, closed_sets
-from smart_home_api import NO_CALL, TOOLS
+from common import api
+from common.api import NO_CALL, TOOLS
+from common.paths import ROOT, SPEC_PATH, load_env
+from common.paths import SPEC_PROMPT_PATH as PROMPT_PATH
+from common.paths import SPEC_REPLY_PATH as REPLY_PATH  # raw JSON reply, kept for the record
+from common.schema import closed_sets
+from jev.build_questions import check_spec
 
 MODEL = "claude-opus-5-5"
 EFFORT = "high"
-PROMPT_PATH = Path(__file__).with_name("spec_prompt.txt")
-REPLY_PATH = Path(__file__).with_name("spec_reply.json")  # raw JSON reply, kept for the record
-ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
 
 PROMPT = """\
 You are writing the wording for Jev, a decision model from TypeSafe that fills
@@ -206,7 +207,7 @@ def spec_schema() -> dict:
 
 
 def build_prompt(output: str) -> str:
-    return PROMPT.format(source=inspect.getsource(smart_home_api).strip(),
+    return PROMPT.format(source=inspect.getsource(api).strip(),
                          no_call=NO_CALL, output=output,
                          example=json.dumps(EXAMPLE, indent=2))
 
@@ -214,9 +215,8 @@ def build_prompt(output: str) -> str:
 def ask_claude() -> dict:
     """Ask Claude for the spec; structured outputs make the API enforce the schema."""
     import anthropic
-    from dotenv import load_dotenv
 
-    load_dotenv(ENV_FILE)  # ANTHROPIC_API_KEY in env
+    load_env()  # ANTHROPIC_API_KEY
     client = anthropic.Anthropic()
     with client.beta.messages.stream(
         model=MODEL,
@@ -242,16 +242,16 @@ def ask_claude() -> dict:
 
 def save_spec(spec: dict, source: str) -> None:
     SPEC_PATH.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n")
-    print(f"Wrote {SPEC_PATH.name} ({source})")
+    print(f"Wrote {SPEC_PATH.relative_to(ROOT)} ({source})")
 
 
 def write_prompt() -> None:
     prompt = build_prompt(OUTPUT_JSON.format(schema=json.dumps(spec_schema(), indent=2)))
     PROMPT_PATH.write_text(prompt)
     subprocess.run(["pbcopy"], input=prompt.encode(), check=False)
-    print(f"Prompt written to {PROMPT_PATH.name} and copied to the clipboard. Paste it into a "
-          f"fresh Claude chat, save the JSON reply to a file, then run:\n"
-          f"  python generate_spec.py --check <reply file>")
+    print(f"Prompt written to {PROMPT_PATH.relative_to(ROOT)} and copied to the clipboard. Paste it "
+          f"into a fresh Claude chat, save the JSON reply to a file, then run:\n"
+          f"  python -m jev.generate_spec --check <reply file>")
 
 
 def main() -> None:
@@ -284,7 +284,7 @@ def main() -> None:
         return
 
     REPLY_PATH.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n")
-    save_spec(spec, source=f"drafted by {MODEL} via structured outputs, from smart_home_api.py only")
+    save_spec(spec, source=f"drafted by {MODEL} via structured outputs, from common/api.py only")
 
 
 if __name__ == "__main__":
