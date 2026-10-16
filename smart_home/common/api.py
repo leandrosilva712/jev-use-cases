@@ -12,16 +12,19 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
+LightAction = Literal["on", "off", "brighter", "dimmer", "color"]
 Room = Literal[
     "kitchen", "living room", "bedroom", "bathroom", "dining room", "hallway",
     "office", "den", "garage", "porch", "patio", "balcony", "garden", "all",
 ]
 Color = Literal["red", "orange", "yellow", "green", "blue", "purple", "pink", "white"]
 Drink = Literal["regular", "espresso", "cappuccino", "latte", "americano"]
+PlugAction = Literal["on", "off"]
+SpeakerAction = Literal["volume_up", "volume_down", "mute"]
 
 
 def lights(
-    action: Literal["on", "off", "brighter", "dimmer", "color"],
+    action: LightAction,
     room: Optional[Room] = None,
     color: Optional[Color] = None,
 ) -> str:
@@ -39,12 +42,12 @@ def coffee(drink: Drink = "regular") -> str:
     return _echo("coffee", drink=drink)
 
 
-def plug(action: Literal["on", "off"]) -> str:
+def plug(action: PlugAction) -> str:
     """Switch the smart plug (wemo socket) on or off."""
     return _echo("plug", action=action)
 
 
-def speaker(action: Literal["volume_up", "volume_down", "mute"]) -> str:
+def speaker(action: SpeakerAction) -> str:
     """Change the speaker volume or mute it."""
     return _echo("speaker", action=action)
 

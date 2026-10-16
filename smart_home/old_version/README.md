@@ -54,13 +54,8 @@ jev/config.json                     room cut-off tuned on dev for the old wordin
 results/jev/raw.json                Jev's answers to all 250 commands (old wording)
 results/jev/*.jsonl, *_mistakes.csv predictions and wrong calls at the tuned room cut-off
 results/report/                     the four-scenario report for the old wording
-regenerate.py                       rebuilds config, predictions and report from raw.json
 ```
 
-`raw.json` holds the answers Jev gave to the old wording. Everything else is
-rebuilt from it with the current code (same tuning and report as the current
-version), with no API calls:
-
-```bash
-python -m old_version.regenerate
-```
+`raw.json` holds the answers Jev gave to the old wording. The config,
+predictions and report were built from it with the same tuning and report code
+as the current version.
